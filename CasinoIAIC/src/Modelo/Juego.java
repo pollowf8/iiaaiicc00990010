@@ -3,26 +3,38 @@
  */
 package Modelo;
 
+import java.util.Random;
+
 /**
  * @author jga
  *
  */
-public class Juego {
-	private int numBusquedas;
-	private boolean completo;
+public abstract class Juego {
+	private final int MAXbusquedas=8;
+	private int NUMbusquedas;
+	private boolean usadas[];
 	
 	public Juego(){
-		this.numBusquedas=6;
-		this.completo=false;
+		this.usadas=new boolean[this.MAXbusquedas];
+		this.NUMbusquedas=0;
+		for (int i=0; i<this.MAXbusquedas; i++){
+			this.usadas[i]=false;
+		}
 	}
 	
 	public boolean completo(){
-		return numBusquedas==0;
+		return this.NUMbusquedas==0;
 	}
 	
 	public int getNumBus(){
-		int aux=numBusquedas;
-		numBusquedas--;
-		return aux;
+		if (this.completo()) return -1;
+		Random r=new Random();
+		int indice=r.nextInt(this.MAXbusquedas);
+		while (this.usadas[indice]==true){
+			indice=r.nextInt(this.MAXbusquedas);
+		}
+		return indice;
 	}
+	
+	public abstract boolean lanzaJuego(int busqueda);
 }
