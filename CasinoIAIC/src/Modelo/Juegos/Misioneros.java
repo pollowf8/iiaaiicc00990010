@@ -210,10 +210,8 @@ public class Misioneros extends Juego{
 		return sucesores;
 	}
 	
-	public void setGoal(){
-		NMI=0;
-		NCI=0;
-		BAR=0;
+	public boolean isGoal(){
+		return (NMI==0 && NCI==0 && BAR==0);
 	}
 	
 	public boolean equals(Object o){

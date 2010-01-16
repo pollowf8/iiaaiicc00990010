@@ -23,7 +23,7 @@ public class ProfundidadLimitada implements Busqueda{
 	}
 
 	@Override
-	public Juego resuelve(Juego inicial,Juego goal){
+	public Juego resuelve(Juego inicial){
 		boolean fin=false;
 		int generados=1;
 		int expandidos=0;
@@ -38,7 +38,7 @@ public class ProfundidadLimitada implements Busqueda{
 			// más hundida, por lo que nunca se llega a explorar.
 			while (!fin && !pilaAbiertos.isEmpty()){
 				juego=pilaAbiertos.pop();
-				if (juego.equals(goal)){
+				if (juego.isGoal()){
 					// Si el juego es igual que el estado final, se guarda en su camino toda la información de la búsqueda para mostrarla después
 					fin=true;
 					String camino=juego.getCamino()+"Nodos generados:"+generados+" ; Nodos expandidos:"+expandidos+" ; Coste: "+juego.getCoste()+
@@ -79,10 +79,8 @@ public class ProfundidadLimitada implements Busqueda{
 	 */
 	public static void main(String[] args){
 		Garrafas inicial=new Garrafas();
-		Garrafas goal=new Garrafas();
-		goal.setGoal();
 		ProfundidadLimitada busqueda=new ProfundidadLimitada(15);
-		Garrafas solucion=(Garrafas)busqueda.resuelve(inicial,goal);
+		Garrafas solucion=(Garrafas)busqueda.resuelve(inicial);
 		System.out.print("Búsqueda en profundidad limitada a 15:\nEstado inicial: "+inicial.toString());
 		if (solucion!=null){
 			System.out.print(solucion.getCamino());

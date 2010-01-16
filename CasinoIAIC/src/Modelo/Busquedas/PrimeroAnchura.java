@@ -5,7 +5,11 @@ import java.util.List;
 import java.util.Queue;
 import java.util.Vector;
 import Modelo.Juegos.Juego;
+import Modelo.Juegos.Puzzle8;
+import Modelo.Juegos.Garrafas;
 import Modelo.Juegos.Misioneros;
+import Modelo.Juegos.LoboCabraCol;
+import Modelo.Juegos.Hanoi;
 
 /**
  * Búsqueda primero en anchura. Desde un estado inicial va expandiendo nodos y recorriendolos con una cola, de forma
@@ -16,7 +20,7 @@ import Modelo.Juegos.Misioneros;
 public class PrimeroAnchura implements Busqueda{
 
 	@Override
-	public Juego resuelve(Juego inicial,Juego goal){
+	public Juego resuelve(Juego inicial){
 		boolean fin=false;
 		int generados=1;
 		int expandidos=0;
@@ -26,7 +30,7 @@ public class PrimeroAnchura implements Busqueda{
 		Juego juego=null;
 		while (!fin){
 			juego=colaAbiertos.poll();
-			if (juego.equals(goal)){
+			if (juego.isGoal()){
 				// Si el juego es igual que el estado final, se guarda en su camino toda la información de la búsqueda para mostrarla después
 				fin=true;
 				String camino=juego.getCamino()+"Nodos generados:"+generados+" ; Nodos expandidos:"+expandidos+" ; Coste: "+juego.getCoste()+
@@ -57,12 +61,10 @@ public class PrimeroAnchura implements Busqueda{
 	 * @param args, no se usa
 	 */
 	public static void main(String[] args){
-		Misioneros inicial=new Misioneros();
-		Misioneros goal=new Misioneros();
-		goal.setGoal();
+		Garrafas inicial=new Garrafas();
 		PrimeroAnchura busqueda=new PrimeroAnchura();
-		Misioneros solucion=(Misioneros)busqueda.resuelve(inicial,goal);
-		System.out.print("Búsqueda en anchura Misioneros:\nEstado inicial: "+inicial.toString());
+		System.out.print("Búsqueda en anchura Garrafas:\nEstado inicial: "+inicial.toString());
+		Garrafas solucion=(Garrafas)busqueda.resuelve(inicial);
 		System.out.print(solucion.getCamino());
 		System.out.print("\nSolución: "+solucion.toString());
 	}

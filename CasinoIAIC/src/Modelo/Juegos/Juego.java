@@ -67,9 +67,10 @@ public abstract class Juego{
 	public abstract Vector expandir();
 	
 	/**
-	 * cambiar el estado del juego al objetivo
+	 * Comprueba si el estado actual es un objetivo
+	 * @return true si es un estado final
 	 */
-	public abstract void setGoal();
+	public abstract boolean isGoal();
 	
 	public abstract boolean equals(Object o);
 

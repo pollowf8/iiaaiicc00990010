@@ -17,7 +17,7 @@ import Modelo.Juegos.Garrafas;
 public class PrimeroProfundidad implements Busqueda{
 
 	@Override
-	public Juego resuelve(Juego inicial,Juego goal) {
+	public Juego resuelve(Juego inicial) {
 		boolean fin=false;
 		int generados=1;
 		int expandidos=0;
@@ -29,7 +29,7 @@ public class PrimeroProfundidad implements Busqueda{
 		try{
 			while (!fin){
 				juego=pilaAbiertos.pop();
-				if (juego.equals(goal)){
+				if (juego.isGoal()){
 					fin=true;
 					String camino=juego.getCamino()+"Nodos generados:"+generados+" ; Nodos expandidos:"+expandidos+" ; Coste: "+juego.getCoste()+
 								" ; Profundidad:"+juego.getProfundidad();
@@ -65,10 +65,8 @@ public class PrimeroProfundidad implements Busqueda{
 	 */
 	public static void main(String[] args){
 		Garrafas inicial=new Garrafas();
-		Garrafas goal=new Garrafas();
-		goal.setGoal();
 		PrimeroProfundidad busqueda=new PrimeroProfundidad();
-		Garrafas solucion=(Garrafas)busqueda.resuelve(inicial,goal);
+		Garrafas solucion=(Garrafas)busqueda.resuelve(inicial);
 		System.out.print("Búsqueda primero en profundidad Garrafas:\nEstado inicial: "+inicial.toString());
 		if (solucion!=null){
 			System.out.print(solucion.getCamino());
