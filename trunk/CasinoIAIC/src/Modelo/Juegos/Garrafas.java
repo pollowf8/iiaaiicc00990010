@@ -45,7 +45,6 @@ public class Garrafas extends Juego{
 		camino=g.camino+cam;
 	}
 
-	
 	/**
 	 * Exploración del estado, según el operador que se quiera aplicar, se devuelve si sería posible o no hacer esa operación.
 	 * 
@@ -192,8 +191,7 @@ public class Garrafas extends Juego{
 		if ((o==null) || (this.getClass()!=o.getClass()))
 			return false;
 		Garrafas estado=(Garrafas)o;
-		return (estado.gra==gra) && (estado.peq==peq);
-		
+		return (estado.gra==gra) && (estado.peq==peq);	
 	}
 	
 	@Override
