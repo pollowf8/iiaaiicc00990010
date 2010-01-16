@@ -11,9 +11,8 @@ public interface Busqueda{
 	/**
 	 * Resuelve un juego con una busqueda
 	 * @param juego inicial
-	 * @param juego objetivo
-	 * @return juego al que se ha llegado
+	 * @return juego al que se ha llegado. será la solución si la ha encontrado, o null si no la encontró
 	 */
-	public Juego resuelve(Juego inicial,Juego goal);
+	public Juego resuelve(Juego inicial);
 }
 

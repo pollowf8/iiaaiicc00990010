@@ -16,7 +16,7 @@ import Modelo.Juegos.Puzzle8;
 public class ProfundidadIterativa implements Busqueda{
 
 	@Override
-	public Juego resuelve(Juego inicial,Juego goal){
+	public Juego resuelve(Juego inicial){
 		boolean fin=false;
 		int generados=1;
 		int expandidos=0;
@@ -36,7 +36,7 @@ public class ProfundidadIterativa implements Busqueda{
 					profundidad++;
 				}
 				juego=pilaAbiertos.pop();
-				if (juego.equals(goal)){
+				if (juego.isGoal()){
 					// Si el juego es igual que el estado final, se guarda en su camino toda la información de la búsqueda para mostrarla después
 					fin=true;
 					String camino=juego.getCamino()+"Nodos generados:"+generados+" ; Nodos expandidos:"+expandidos+" ; Coste: "+juego.getCoste()+
@@ -74,10 +74,8 @@ public class ProfundidadIterativa implements Busqueda{
 	 */
 	public static void main(String[] args){
 		Puzzle8 inicial=new Puzzle8();
-		Puzzle8 goal=new Puzzle8();
-		goal.setGoal();
 		ProfundidadIterativa busqueda=new ProfundidadIterativa();
-		Puzzle8 solucion=(Puzzle8)busqueda.resuelve(inicial,goal);
+		Puzzle8 solucion=(Puzzle8)busqueda.resuelve(inicial);
 		System.out.print("Búsqueda en profundidad iterativa Puzzle8:\nEstado inicial: "+inicial.toString());
 		if (solucion!=null){
 			System.out.print(solucion.getCamino());

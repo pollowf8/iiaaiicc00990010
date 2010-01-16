@@ -185,12 +185,9 @@ public class LoboCabraCol extends Juego{
 		}
 		return sucesores;
 	}
-	
-	public void setGoal(){
-		granjero=0;
-		cabra=0;
-		col=0;
-		lobo=0;
+
+	public boolean isGoal(){
+		return (granjero==0 && cabra==0 && col==0 && lobo==0);
 	}
 	
 	public boolean equals(Object o){

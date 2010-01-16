@@ -199,11 +199,8 @@ public class Hanoi extends Juego{
 		return sucesores;
 	}
 
-	public void setGoal(){
-		varillaA.clear();
-		varillaB.clear();
-		for (int i=4;i>0;i--)
-			varillaC.push(i);
+	public boolean isGoal(){
+		return (varillaA.isEmpty() && varillaB.isEmpty() && !varillaC.isEmpty());
 	}
 	
 	public boolean equals(Object o){

@@ -197,26 +197,18 @@ public class Puzzle8 extends Juego{
 		return sucesores;
 	}
 
-	public void setGoal(){
-		tablero[0]=1;
-		tablero[1]=2;
-		tablero[2]=3;
-		tablero[3]=8;
-		tablero[4]=0;
-		tablero[5]=4;
-		tablero[6]=7;
-		tablero[7]=6;
-		tablero[8]=5;
+	public boolean isGoal(){
+		return (tablero[0]==1 && tablero[1]==2 && tablero[2]==3 &&
+				tablero[3]==8 && tablero[4]==0 && tablero[5]==4 &&
+				tablero[6]==7 && tablero[7]==6 && tablero[8]==5);
 	}
 	
-	@Override
 	public String toString(){
 		return "["+tablero[0]+" "+tablero[1]+" "+tablero[2]+"]["
 				+tablero[3]+" "+tablero[4]+" "+tablero[5]+"]["
 				+tablero[6]+" "+tablero[7]+" "+tablero[8]+"]\n";	
 	}
 	
-	@Override
 	public boolean equals(Object o){
 		if (this==o)
 			return true;

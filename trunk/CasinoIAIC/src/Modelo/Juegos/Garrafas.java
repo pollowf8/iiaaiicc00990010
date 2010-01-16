@@ -179,9 +179,8 @@ public class Garrafas extends Juego{
 		return sucesores;
 	}
 	
-	public void setGoal(){
-		gra=2;
-		peq=0;
+	public boolean isGoal(){
+		return (gra==2 && peq==0);
 	}
 	
 	@Override
