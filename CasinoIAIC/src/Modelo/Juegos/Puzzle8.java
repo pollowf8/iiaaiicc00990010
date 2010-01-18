@@ -13,13 +13,18 @@ public class Puzzle8 extends Juego{
 	 * tablero de juego, en cada posición contiene el valor asociado a la ficha que la ocupa (1, 2, 3,...). El hueco vacío se codifica con un 0
 	 */
 	private int[] tablero;
+	/**
+	 * estado objetivo
+	 */
+	private int[] goal;
 	
 	/**
 	 * Constructora de estado inicial. Crea el tablero inicial y pone a 0 el resto de valores.
 	 */
 	public Puzzle8(){
 		tablero=new int[]{2,8,3,1,6,4,7,0,5};
-		valorHeur=0;
+		goal=new int[]{1,2,3,8,0,4,7,6,5};
+		valorHeur=this.Heuristica();
 		coste=0;
 		profundidad=0;
 		camino="";
@@ -36,6 +41,9 @@ public class Puzzle8 extends Juego{
 		tablero=new int[9];
 		for (int i=0;i<tablero.length;i++)
 			tablero[i]=puzzle.tablero[i];
+		goal=new int[9];
+		for (int i=0;i<goal.length;i++)
+			goal[i]=puzzle.goal[i];
 		coste=puzzle.coste+cos;
 		profundidad=puzzle.profundidad+1;
 		camino=puzzle.camino+cam;
@@ -100,6 +108,7 @@ public class Puzzle8 extends Juego{
 		int pos=this.getPos(0);
 		tablero[pos]=tablero[pos-3];
 		tablero[pos-3]=0;
+		valorHeur=this.Heuristica();
 	}
 	
 	/**
@@ -109,6 +118,7 @@ public class Puzzle8 extends Juego{
 		int pos=this.getPos(0);
 		tablero[pos]=tablero[pos+3];
 		tablero[pos+3]=0;
+		valorHeur=this.Heuristica();
 	}
 	
 	/**
@@ -118,6 +128,7 @@ public class Puzzle8 extends Juego{
 		int pos=this.getPos(0);
 		tablero[pos]=tablero[pos+1];
 		tablero[pos+1]=0;
+		valorHeur=this.Heuristica();
 	}
 	
 	/**
@@ -127,6 +138,7 @@ public class Puzzle8 extends Juego{
 		int pos=this.getPos(0);
 		tablero[pos]=tablero[pos-1];
 		tablero[pos-1]=0;
+		valorHeur=this.Heuristica();
 	}
 	
 	/**
@@ -154,15 +166,20 @@ public class Puzzle8 extends Juego{
 	}
 
 	/**
-	 * Función heurística. Sigue el método Manhattan, devuelve la suma de las distancias de las posiciones actuales a las del objetivo
+	 * Función heurística. Sigue el método Manhattan, devuelve la suma de las distancias de las posiciones actuales a las del objetivo. Además se ha mejorado
+	 * con la suma de otra heurística, el número de fichas descolocadas.
 	 * @param goal estado objetivo
 	 * @return suma de distancias. Cuanto más pequeño sea el número, más cerca se está del objetivo.
 	 */
-	public double Heuristica(Puzzle8 goal){
+	public double Heuristica(){
 		int dist=0;
 		for (int i=0;i<tablero.length;i++) {
-			int valor=this.getValor(i);
-			int pos=goal.getPos(valor);
+			int valor=tablero[i];
+			int pos=0;
+			
+			for (int j=0;j<goal.length;j++)
+				if (goal[j]==valor)
+					pos=j;
 			// distancia en horizontal
 			int dh=getX(i,pos);
 			// distancia en vertical

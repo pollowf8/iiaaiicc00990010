@@ -12,7 +12,7 @@ public abstract class Juego{
 	/**
 	 * valor heurístico del juego. -1 si el juego no soporta heurísticas
 	 */
-	protected int valorHeur;
+	protected double valorHeur;
 	/**
 	 * coste acumulado desde el estado inicial
 	 */
@@ -29,7 +29,7 @@ public abstract class Juego{
 	/**
 	 * @return valor heurístico del estado
 	 */
-	public int getValorHeur(){
+	public double getValorHeur(){
 		return valorHeur;
 	}
 	
