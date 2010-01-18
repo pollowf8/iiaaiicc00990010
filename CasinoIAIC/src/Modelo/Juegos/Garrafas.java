@@ -143,8 +143,8 @@ public class Garrafas extends Juego{
 		}
 	}
 	
-	public Vector expandir(){
-		Vector<Garrafas> sucesores=new Vector<Garrafas>(0,1);
+	public Vector<Juego> expandir(){
+		Vector<Juego> sucesores=new Vector<Juego>(0,1);
 		Garrafas estado;
 		if (this.puedo("LG")){
 			estado=new Garrafas(this,1,"Llena grande\n");

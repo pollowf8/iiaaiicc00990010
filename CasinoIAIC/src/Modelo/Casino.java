@@ -6,6 +6,8 @@ package Modelo;
 import java.util.ArrayList;
 import java.util.Random;
 
+import Modelo.Juegos.Juego;
+
 /**
  * @author jga
  *
@@ -29,9 +31,10 @@ public class Casino {
 		this.vidas=29000;
 		this.zonaActual=0;
 		this.juegos=new ArrayList<Juego>();
+		/*
 		for (int i=0; i<10; i++){
 			this.juegos.add(new Juego());
-		}
+		}*/
 		// TODO
 		// Crear los juegos y añadirlos
 		zonas=new ArrayList<Zona>();

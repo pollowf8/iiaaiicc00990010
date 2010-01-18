@@ -160,8 +160,8 @@ public class LoboCabraCol extends Juego{
 		}
 	}
 
-	public Vector expandir(){
-		Vector<LoboCabraCol> sucesores=new Vector<LoboCabraCol>(0,1);
+	public Vector<Juego> expandir(){
+		Vector<Juego> sucesores=new Vector<Juego>(0,1);
 		LoboCabraCol estado;
 		if (this.puedo("G")){
 			estado=new LoboCabraCol(this,1,"Mueve granjero\n");

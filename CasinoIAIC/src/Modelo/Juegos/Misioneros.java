@@ -179,8 +179,8 @@ public class Misioneros extends Juego{
 		}
 	}
 	
-	public Vector expandir(){
-		Vector<Misioneros> sucesores=new Vector<Misioneros>(0,1);
+	public Vector<Juego> expandir(){
+		Vector<Juego> sucesores=new Vector<Juego>(0,1);
 		Misioneros estado;
 		if (this.puedo("M")){
 			estado=new Misioneros(this,1,"Mover 1 misionero\n");
