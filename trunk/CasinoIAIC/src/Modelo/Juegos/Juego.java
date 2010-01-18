@@ -1,5 +1,6 @@
 package Modelo.Juegos;
 
+import java.util.Random;
 import java.util.Vector;
 
 /**
@@ -25,6 +26,60 @@ public abstract class Juego{
 	 * operadores que se han aplicado desde el estado inicial
 	 */
 	protected String camino;
+	/**
+	 * Número máximo de búsquedas para resolver el juego
+	 */
+	private final int MAXbusquedas=8;
+	/**
+	 * Número de búsquedas asignadas aleatoriamente.
+	 */
+	private int NUMbusquedas;
+	/**
+	 * Indica cuales de las 8 búsquedas han sido asignadas
+	 */
+	private boolean usadas[];
+	
+	/****************************************************************************/
+	
+	/**
+	 * Constructora. Inicializa los atributos.
+	 */
+	public Juego(){
+		this.usadas=new boolean[this.MAXbusquedas];
+		this.NUMbusquedas=0;
+		for (int i=0; i<this.MAXbusquedas; i++){
+			this.usadas[i]=false;
+		}
+	}
+	
+	/**
+	 * Indica si están asignadas todas las busquedas.
+	 * @return true si no quedan busquedas a asignar.
+	 */
+	public boolean completo(){
+		return this.NUMbusquedas==0;
+	}
+	
+	/**
+	 * Asigna una busqueda aleatoriamente
+	 * @return integer de 0 a 7 que indica la busqueda asignada. -1 en caso de 
+	 * estar todas asignadas.
+	 */
+	public int getNumBus(){
+		if (this.completo()) return -1;
+		/*
+		 * Generamos aleatoriamente un numero entre 0 y 7
+		 */
+		Random r=new Random();
+		int indice=r.nextInt(this.MAXbusquedas);
+		/*
+		 * Seguimos generando numeros hasta encontrar una busqueda libre
+		 */
+		while (this.usadas[indice]==true){
+			indice=r.nextInt(this.MAXbusquedas);
+		}
+		return indice;
+	}
 	
 	/**
 	 * @return valor heurístico del estado
@@ -64,7 +119,7 @@ public abstract class Juego{
 	/**
 	 * @return vector con todos los posibles sucesores del estado
 	 */
-	public abstract Vector expandir();
+	public abstract Vector<Juego> expandir();
 	
 	/**
 	 * Comprueba si el estado actual es un objetivo

@@ -189,8 +189,8 @@ public class Puzzle8 extends Juego{
 		return dist;
 	}
 	
-	public Vector expandir(){
-		Vector<Puzzle8> sucesores = new Vector<Puzzle8>();
+	public Vector<Juego> expandir(){
+		Vector<Juego> sucesores = new Vector<Juego>();
 		if (this.puedo("Left")){
 			Puzzle8 siguiente=new Puzzle8(this,1,"Izquierda\n");
 			siguiente.mueveLeft();

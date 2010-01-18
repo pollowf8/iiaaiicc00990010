@@ -157,8 +157,8 @@ public class Hanoi extends Juego{
 		varillaB.push(cima);
 	}
 
-	public Vector expandir(){
-		Vector<Hanoi> sucesores=new Vector<Hanoi>(0,1);
+	public Vector<Juego> expandir(){
+		Vector<Juego> sucesores=new Vector<Juego>(0,1);
 		Hanoi estado;
 		// Mover cima de A a B
 		if (this.puedo("AB")){
