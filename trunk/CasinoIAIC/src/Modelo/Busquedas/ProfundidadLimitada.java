@@ -16,9 +16,14 @@ import Modelo.Juegos.*;
 public class ProfundidadLimitada implements Busqueda{
 	
 	private int profundidad;
+	private final int DEFAULTprof=15;
 	
 	public ProfundidadLimitada(int p){
 		profundidad=p;
+	}
+
+	public ProfundidadLimitada() {
+		profundidad=this.DEFAULTprof;
 	}
 
 	@Override
