@@ -14,20 +14,31 @@ public class Zona {
 	private int busqueda;
 	private int apuesta;
 	private int premio;
-	private int zonaPadre;
+	private ArrayList<Integer> padres;
 	private ArrayList<Integer> hijos;
+	private boolean fin;
 	
-	public Zona(int juego, int busqueda, int padre, int apuesta, int premio){
+	/**
+	 * @return the fin
+	 */
+	public boolean isFin() {
+		return fin;
+	}
+
+	/**
+	 * @param fin the fin to set
+	 */
+	public void setFin(boolean fin) {
+		this.fin = fin;
+	}
+	
+	public Zona(int juego, int busqueda, int apuesta, int premio){
 		this.juego=juego;
 		this.busqueda=busqueda;
-		this.zonaPadre=padre;
 		this.apuesta=apuesta;
 		this.premio=premio;
 		this.hijos=new ArrayList<Integer>();
-	}
-	
-	public void addHijo(int hijo){
-		hijos.add(hijo);
+		this.padres=new ArrayList<Integer>();
 	}
 
 	public int getJuego() {
@@ -62,14 +73,10 @@ public class Zona {
 		this.premio = premio;
 	}
 
-	public int getZonaPadre() {
-		return zonaPadre;
+	public void addHijo(int hijo){
+		hijos.add(hijo);
 	}
-
-	public void setZonaPadre(int zonaPadre) {
-		this.zonaPadre = zonaPadre;
-	}
-
+	
 	public int getNumHijos() {
 		return hijos.size();
 	}
@@ -78,7 +85,23 @@ public class Zona {
 		try{
 		return this.hijos.get(indice);
 		} catch (ArrayIndexOutOfBoundsException e){
-			return 101;
+			return -1;
+			}
+	}
+	
+	public void addPadre(int padre){
+		padres.add(padre);
+	}
+	
+	public int getNumPadres() {
+		return padres.size();
+	}
+	
+	public int getPadre(int indice){
+		try{
+		return this.padres.get(indice);
+		} catch (ArrayIndexOutOfBoundsException e){
+			return -1;
 			}
 	}
 	

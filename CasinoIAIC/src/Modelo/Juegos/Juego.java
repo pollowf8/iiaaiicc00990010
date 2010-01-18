@@ -3,6 +3,8 @@ package Modelo.Juegos;
 import java.util.Random;
 import java.util.Vector;
 
+import Modelo.Casino;
+
 /**
  * Clase abstracta Juego. Proporciona la estructura común de todos los juegos, que después implementarán los métodos abstractos según
  * los estados y operadores de cada uno. Cada instancia de ésta clase, o de las que heredan de ella, representa un único estado de juego.
@@ -25,11 +27,7 @@ public abstract class Juego{
 	/**
 	 * operadores que se han aplicado desde el estado inicial
 	 */
-	protected String camino;
-	/**
-	 * Número máximo de búsquedas para resolver el juego
-	 */
-	private final int MAXbusquedas=8;
+	protected String camino;	
 	/**
 	 * Número de búsquedas asignadas aleatoriamente.
 	 */
@@ -45,9 +43,9 @@ public abstract class Juego{
 	 * Constructora. Inicializa los atributos.
 	 */
 	public Juego(){
-		this.usadas=new boolean[this.MAXbusquedas];
+		this.usadas=new boolean[Casino.MAXbusquedas];
 		this.NUMbusquedas=0;
-		for (int i=0; i<this.MAXbusquedas; i++){
+		for (int i=0; i<Casino.MAXbusquedas; i++){
 			this.usadas[i]=false;
 		}
 	}
@@ -57,7 +55,7 @@ public abstract class Juego{
 	 * @return true si no quedan busquedas a asignar.
 	 */
 	public boolean completo(){
-		return this.NUMbusquedas==0;
+		return this.NUMbusquedas==Casino.MAXbusquedas;
 	}
 	
 	/**
@@ -71,12 +69,12 @@ public abstract class Juego{
 		 * Generamos aleatoriamente un numero entre 0 y 7
 		 */
 		Random r=new Random();
-		int indice=r.nextInt(this.MAXbusquedas);
+		int indice=r.nextInt(Casino.MAXbusquedas);
 		/*
 		 * Seguimos generando numeros hasta encontrar una busqueda libre
 		 */
 		while (this.usadas[indice]==true){
-			indice=r.nextInt(this.MAXbusquedas);
+			indice=r.nextInt(Casino.MAXbusquedas);
 		}
 		return indice;
 	}
