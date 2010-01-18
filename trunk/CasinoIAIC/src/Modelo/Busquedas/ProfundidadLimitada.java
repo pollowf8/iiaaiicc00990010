@@ -4,8 +4,7 @@ import java.util.List;
 import java.util.Stack;
 import java.util.Vector;
 
-import Modelo.Juegos.Juego;
-import Modelo.Juegos.Garrafas;
+import Modelo.Juegos.*;
 
 /**
  * Búsqueda en profundidad limitada. Es una búsqueda primero en profundidad, pero limita el número de niveles que se pueden expandir. Incluye
@@ -63,26 +62,22 @@ public class ProfundidadLimitada implements Busqueda{
 					}
 				}
 			}
-			// Si el while ha fallado por la pila vacía, devolver null, pues no se ha encontrado la solución
-			if (!fin)
-				return null;
 			return juego;
 		}
 		catch (Error e){
-			return null;
+			return juego;
 		}
-	}
-	
+	}	
 	/**
 	 * Main para probar la búsqueda
 	 * @param args, no se usa
 	 */
 	public static void main(String[] args){
-		Garrafas inicial=new Garrafas();
+		Juego inicial=new Hanoi();
 		ProfundidadLimitada busqueda=new ProfundidadLimitada(15);
-		Garrafas solucion=(Garrafas)busqueda.resuelve(inicial);
+		Juego solucion=(Hanoi)busqueda.resuelve(inicial);
 		System.out.print("Búsqueda en profundidad limitada a 15:\nEstado inicial: "+inicial.toString());
-		if (solucion!=null){
+		if (solucion.isGoal()){
 			System.out.print(solucion.getCamino());
 			System.out.print("\nSolución: "+solucion.toString());
 		}
