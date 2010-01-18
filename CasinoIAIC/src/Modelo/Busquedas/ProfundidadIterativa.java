@@ -4,8 +4,7 @@ import java.util.List;
 import java.util.Stack;
 import java.util.Vector;
 
-import Modelo.Juegos.Juego;
-import Modelo.Juegos.Puzzle8;
+import Modelo.Juegos.*;
 
 /**
  * Búsqueda en profundidad iterativa. Sigue el mismo principio que la búsqueda en profundidad limitada, empieza con una profundidad 0, y va incrementandola
@@ -64,7 +63,7 @@ public class ProfundidadIterativa implements Busqueda{
 			return juego;
 		}
 		catch (Error e){
-			return null;
+			return juego;
 		}
 	}
 	
@@ -77,7 +76,7 @@ public class ProfundidadIterativa implements Busqueda{
 		ProfundidadIterativa busqueda=new ProfundidadIterativa();
 		Puzzle8 solucion=(Puzzle8)busqueda.resuelve(inicial);
 		System.out.print("Búsqueda en profundidad iterativa Puzzle8:\nEstado inicial: "+inicial.toString());
-		if (solucion!=null){
+		if (solucion.isGoal()){
 			System.out.print(solucion.getCamino());
 			System.out.print("\nSolución: "+solucion.toString());
 		}

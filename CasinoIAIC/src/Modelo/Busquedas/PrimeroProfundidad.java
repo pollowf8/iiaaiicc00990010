@@ -4,8 +4,7 @@ import java.util.List;
 import java.util.Stack;
 import java.util.Vector;
 
-import Modelo.Juegos.Juego;
-import Modelo.Juegos.Garrafas;
+import Modelo.Juegos.*;
 
 /**
  * Búsqueda primero en profundidad. Desde el estado inicial, se van expandiendo sucesores, y se recorren con una pila, de forma que se explora el primer nodo
@@ -55,7 +54,7 @@ public class PrimeroProfundidad implements Busqueda{
 			return juego;
 		}
 		catch (Error e){
-			return null;
+			return juego;
 		}
 	}
 	
@@ -64,11 +63,11 @@ public class PrimeroProfundidad implements Busqueda{
 	 * @param args, no se usa
 	 */
 	public static void main(String[] args){
-		Garrafas inicial=new Garrafas();
+		Juego inicial=new LoboCabraCol();
 		PrimeroProfundidad busqueda=new PrimeroProfundidad();
-		Garrafas solucion=(Garrafas)busqueda.resuelve(inicial);
-		System.out.print("Búsqueda primero en profundidad Garrafas:\nEstado inicial: "+inicial.toString());
-		if (solucion!=null){
+		Juego solucion=(LoboCabraCol)busqueda.resuelve(inicial);
+		System.out.print("Búsqueda primero en profundidad Lobo, cabra y col:\nEstado inicial: "+inicial.toString());
+		if (solucion.isGoal()){
 			System.out.print(solucion.getCamino());
 			System.out.print("\nSolución: "+solucion.toString());
 		}

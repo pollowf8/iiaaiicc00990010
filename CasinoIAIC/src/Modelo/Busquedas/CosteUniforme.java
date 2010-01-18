@@ -1,29 +1,22 @@
 package Modelo.Busquedas;
 
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
+import java.util.PriorityQueue;
 import java.util.Vector;
 import Modelo.Juegos.*;
 
-/**
- * Búsqueda primero en anchura. Desde un estado inicial va expandiendo nodos y recorriendolos con una cola, de forma
- * que se busca la solucion por niveles. Incluye control de ciclos.
- * @author Pablo Acevedo
- * 
- */
-public class PrimeroAnchura implements Busqueda{
+public class CosteUniforme implements Busqueda{
 
 	@Override
-	public Juego resuelve(Juego inicial){
+	public Juego resuelve(Juego inicial) {
 		boolean fin=false;
 		int generados=1;
 		int expandidos=0;
 		List<Juego> listaCerrados=new Vector<Juego>(0,1);
-		Queue<Juego> colaAbiertos=new LinkedList<Juego>();
+		PriorityQueue<Juego> colaAbiertos=new PriorityQueue<Juego>(1,new ComparatorCosteUniforme());
 		colaAbiertos.offer(inicial);
 		Juego juego=null;
-		while (!fin){
+		while(!fin){
 			juego=colaAbiertos.poll();
 			if (juego.isGoal()){
 				// Si el juego es igual que el estado final, se guarda en su camino toda la información de la búsqueda para mostrarla después
@@ -51,17 +44,13 @@ public class PrimeroAnchura implements Busqueda{
 		return juego;
 	}
 	
-	/**
-	 * Main para probar la búsqueda
-	 * @param args, no se usa
-	 */
 	public static void main(String[] args){
-		Juego inicial=new Garrafas();
-		PrimeroAnchura busqueda=new PrimeroAnchura();
+		Juego inicial=new Misioneros();
+		CosteUniforme busqueda=new CosteUniforme();
 		System.out.print("Búsqueda en anchura Garrafas:\nEstado inicial: "+inicial.toString());
-		Juego solucion=(Garrafas)busqueda.resuelve(inicial);
+		Juego solucion=(Misioneros)busqueda.resuelve(inicial);
 		System.out.print(solucion.getCamino());
-		System.out.println("\nSolución: "+solucion.toString());
+		System.out.print("\nSolución: "+solucion.toString());
 	}
 	
 }
