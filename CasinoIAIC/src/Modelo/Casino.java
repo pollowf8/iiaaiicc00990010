@@ -4,8 +4,8 @@
 package Modelo;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Random;
-
 import Modelo.Busquedas.*;
 import Modelo.Juegos.*;
 
@@ -15,6 +15,7 @@ import Modelo.Juegos.*;
  */
 public class Casino {
 
+	protected LinkedList<ObservadorPartida>observadores= new LinkedList<ObservadorPartida>();
 	private int vidas;
 	private int zonaActual;
 	private ArrayList<Zona> zonas;
@@ -114,7 +115,14 @@ public class Casino {
 	}
 
 	public boolean jugar(){
-		// TODO jugar
+		escribeEstado("fas");
+		escribeEstado("asfasf");
+		escribeEstado("fas");
+		escribeEstado("asfasf");
+		escribeEstado("fas");
+		escribeEstado("asfasf");
+		escribeEstado("fas");
+		escribeEstado("asfasf");
 		return true;
 	}
 	
@@ -162,6 +170,44 @@ public class Casino {
 			}
 		}
 		
+	}
+
+	public void mostrarLog() {
+		
+	}
+	
+	/**
+	 * Llama al método escribeEstado de cada uno de los observadores.
+	 *
+	 */	
+	public void escribeEstado(String estado)
+	{ 
+			for (ObservadorPartida o: observadores)
+				o.escribeEstado(estado);
+	}
+	
+	/**
+	 * 
+	 * @param obspart Añade un observadorPartida a la lista de observadores,
+	 * si este observador ya existia no lo introduce.
+	 */
+	
+	public void addObserver(ObservadorPartida obspart)
+	{
+	   if (!observadores.contains(obspart))
+	      if (observadores!=null)
+		     observadores.add(obspart);
+	}
+	
+	/**
+	 * 
+	 * @param obspart Elimina un observadorPartida de la lista de observadores.
+	 */
+	
+	public void removeObserver(ObservadorPartida obspart)
+	{   if (observadores!=null)
+			observadores.remove(obspart);
+	
 	}
 
 }
