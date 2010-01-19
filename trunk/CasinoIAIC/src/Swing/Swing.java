@@ -7,12 +7,13 @@ import Controlador.Controlador;
 
 
 
+@SuppressWarnings("serial")
 public class Swing extends JFrame{
 	
 	private Panel panel;
 
 	public Swing(){
-		super("CASINO MICROMUNDOS");
+		super("CASINO MICROMUNDOS FANTASMA");
 		setSize(1000,450);
 		this.setLayout(new BorderLayout());
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
