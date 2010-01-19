@@ -1,6 +1,3 @@
-/**
- * 
- */
 package Modelo;
 
 import java.util.ArrayList;
@@ -21,6 +18,7 @@ public class Casino {
 	private ArrayList<Zona> zonas;
 	private Juego juegos[];
 	private Busqueda busquedas[];
+	private FicheroTxt txt;
 	
 	/**
 	 * Número máximo de búsquedas para resolver el juego
@@ -42,21 +40,13 @@ public class Casino {
 	 */
 	private final int MAXSalidas=3;
 	
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Casino test=new Casino();
-		System.out.println("Fin de la creación del casino.");
-	}
-	
 	public Casino(){
 		this.vidas=29000;
 		this.zonaActual=-1;
 		this.initJuegos();
 		this.initBusquedas();
 		this.initZonas();
+		txt= new FicheroTxt();
 	}
 	
 	private void initBusquedas() {
@@ -123,6 +113,10 @@ public class Casino {
 		escribeEstado("asfasf");
 		escribeEstado("fas");
 		escribeEstado("asfasf");
+		txt.escribeFichero("probando");
+		txt.escribeFichero("probando2");
+		txt.escribeFichero("probando3");
+		txt.escribeFichero("probando4");
 		return true;
 	}
 	
@@ -173,7 +167,7 @@ public class Casino {
 	}
 
 	public void mostrarLog() {
-		
+		txt.open();
 	}
 	
 	/**
@@ -188,7 +182,7 @@ public class Casino {
 	
 	/**
 	 * 
-	 * @param obspart Añade un observadorPartida a la lista de observadores,
+	 * @param obspart Añade un observador a la lista de observadores,
 	 * si este observador ya existia no lo introduce.
 	 */
 	
@@ -201,7 +195,7 @@ public class Casino {
 	
 	/**
 	 * 
-	 * @param obspart Elimina un observadorPartida de la lista de observadores.
+	 * @param obspart Elimina un observador de la lista de observadores.
 	 */
 	
 	public void removeObserver(ObservadorPartida obspart)

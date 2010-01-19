@@ -1,9 +1,3 @@
-/**
- * @author Grupo 13
- * Elisa Rodriguez Navas
- * Alfredo Díez Zamarro
- */
-
 package Modelo;
 
 
