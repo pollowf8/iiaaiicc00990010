@@ -3,8 +3,11 @@ package Modelo;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Random;
+
+import Controlador.Controlador;
 import Modelo.Busquedas.*;
 import Modelo.Juegos.*;
+import Swing.Swing;
 
 /**
  * @author jga
@@ -23,17 +26,17 @@ public class Casino {
 	/**
 	 * Número máximo de búsquedas para resolver el juego
 	 */
-	public static final int MAXbusquedas=8;
+	private final int MAXbusquedas=8;
 	
 	/**
 	 * Número máximo de juegos disponibles para resolver
 	 */
-	public static final int MAXJuegos=5;
+	private final int MAXJuegos=5;
 	
 	/**
 	 * Número máximo de zonas del casino
 	 */
-	private final int MAXZonas=Casino.MAXJuegos*Casino.MAXbusquedas;
+	private final int MAXZonas=this.MAXJuegos*this.MAXbusquedas;
 	
 	/**
 	 * Número de salidas
@@ -46,12 +49,13 @@ public class Casino {
 		this.initJuegos();
 		this.initBusquedas();
 		this.initZonas();
+		this.generaCaminos();
 		txt= new FicheroTxt();
 	}
 	
 	private void initBusquedas() {
-		this.busquedas=new Busqueda[Casino.MAXbusquedas];
-		for (int i=0; i<Casino.MAXbusquedas; i++){
+		this.busquedas=new Busqueda[this.MAXbusquedas];
+		for (int i=0; i<this.MAXbusquedas; i++){
 			switch (i){
 			case 0:
 				this.busquedas[i]=new AEstrella();
@@ -82,8 +86,8 @@ public class Casino {
 	}
 
 	private void initJuegos() {
-		this.juegos=new Juego[Casino.MAXJuegos];
-		for (int i=0; i<Casino.MAXJuegos; i++){
+		this.juegos=new Juego[this.MAXJuegos];
+		for (int i=0; i<this.MAXJuegos; i++){
 			switch (i){
 			case 0:
 				this.juegos[i]=new Garrafas();
@@ -120,50 +124,77 @@ public class Casino {
 		return true;
 	}
 	
+	/**
+	 * Inicializa las zonas asignando aleatoriamente y sin repetir un juego y una búsqueda 
+	 * a cada una. Por lo tanto se crean (MAXJuegos*MAXBusquedas) zonas.
+	 */
 	private void initZonas(){
-		zonas=new ArrayList<Zona>(Casino.MAXJuegos*Casino.MAXbusquedas);
-		for (int i=0; i<this.MAXZonas; i++){
-			Random r=new Random();
-			int numJuego=r.nextInt(Casino.MAXJuegos);
-			Juego aux=juegos[numJuego];
-			while (aux.completo()){
-				numJuego=r.nextInt(Casino.MAXJuegos);
-				aux=juegos[numJuego];
-			}
-			int numBus=aux.getNumBus();
-			this.zonas.add(new Zona(numJuego,numBus,0,0));
-			if (i>=this.MAXZonas-this.MAXSalidas) this.zonas.get(i).setFin(true);
-		}
-		this.generaCaminos();
-	}
-
-	private void generaCaminos() {
-		Random r=new Random();
-		for (int i=0; i<(int) (this.MAXZonas*0.2); i++){
-			for (int j=0; j<4; j++){
-				int indice=r.nextInt(this.MAXZonas-i-1);
-				this.zonas.get(i).addHijo(indice+i+1);
-				this.zonas.get(indice+i+1).addPadre(i);
-			}
-		}
-		for (int i=(int) (this.MAXZonas*0.2); i<this.MAXZonas-this.MAXSalidas; i++){
-			for (int j=0; j<3; j++){
-				int indice=r.nextInt(this.MAXZonas-i-1);
-				this.zonas.get(i).addHijo(indice+i+1);
-				this.zonas.get(indice+i+1).addPadre(i);
-			}
-			int indice=r.nextInt(i);
-			this.zonas.get(i).addHijo(indice);
-			this.zonas.get(indice).addPadre(i);
-		}
-		for (int i=0; i<this.MAXSalidas; i++){
-			if (this.zonas.get(this.MAXZonas-this.MAXSalidas+i).getNumPadres()==0){
-				int indice=r.nextInt((int) (this.MAXZonas*0.1))+1;
-				this.zonas.get(this.MAXZonas-this.MAXSalidas-indice).addHijo(this.MAXZonas-this.MAXSalidas+i);
-				this.zonas.get(this.MAXZonas-this.MAXSalidas+i).addPadre(this.MAXZonas-this.MAXSalidas-indice);
+		
+		/* Array auxiliar que utilizamos para la asignación de juegos y zonas */
+		/* De 0 a MAXZonas-1 (todas las combinaciones posibles) */
+		boolean usadas[][]=new boolean[this.MAXJuegos][this.MAXbusquedas];
+		for (int i=0; i<this.MAXJuegos; i++){
+			for (int j=0; j<this.MAXbusquedas; j++){
+				usadas[i][j]=false;
 			}
 		}
 		
+		/* Inicializamos la lista de zonas */
+		zonas=new ArrayList<Zona>(this.MAXZonas);
+		/* variables auxiliares 
+		 * nJ: número de juego asignado
+		 * nB: número de búsqueda asignada
+		 * asignada: posición generada aleatoriamente entre 0 y MAXZonas-1
+		 */
+		int nJ, nB, asignada=0;
+		/* Para cada zona */
+		for (int i=0; i<this.MAXZonas; i++){
+			/* Genera un número aleatorio del array usadas */
+			Random r=new Random();
+			asignada=r.nextInt(this.MAXZonas);
+			nJ=asignada%this.MAXJuegos;
+			nB=(int)asignada/this.MAXJuegos;
+			/* Comprueba que no ha sido usada previamente */
+			while (usadas[nJ][nB]){
+				asignada=r.nextInt(this.MAXZonas);
+				nJ=asignada%this.MAXJuegos;
+				nB=(int)asignada/this.MAXJuegos;
+			}
+			/* asigna el juego y la búsqueda */
+			this.zonas.add(new Zona(nJ,nB,0,0));
+			/* marcado */
+			usadas[nJ][nB]=true;
+		}
+		
+		/* marcamos las tres últimas zonas como salida */
+		for (int i=this.MAXZonas-this.MAXSalidas; i<this.MAXZonas; i++){
+			this.zonas.get(i).setFin(true);
+		} 
+	}
+	
+	/**
+	 * Genera un grafo conexo entre las zonas de una forma determinada:
+	 * (Sea el número de zonas de 0 a MAXZonas-MAXSalidas-1)
+	 * - Primeras 20% zonas: cada zona i de este rango enlaza con 4 zonas j tal que j>i
+	 * - Siguientes 60% zonas: cada zona i de este rango enlaza con 3 zonas tal que j>i y con una tal que j<i
+	 * - Ultimas 20% zonas: cada zona i de este rango enlaza con 4 zonas j tal que j<i
+	 * - Cada zona conectada no dista más de un 20% de la longitud total de las zonas. Ejemplo: sean 100 zonas y
+	 * está generando la zona 53, no habrá conexiones para esta zona más lejos del rango 33-73 (excluyendo la 53).
+	 * Por lo tanto, todas las zonas tienen camino a otras zonas, excepto las 3 últimas, que salen al exterior.
+	 */
+	private void generaCaminos() {
+		/* rango en el que se van a generar las salidas para una zona. 20% del total */
+		int ambito=(int) (this.MAXZonas*0.2);
+		int finRango1=ambito;
+		int nHijo;
+		for (int i=0; i<finRango1; i++){
+			Random r=new Random();
+			for (int j=0; j<4; j++){
+				nHijo=r.nextInt(ambito)+i+1;
+				this.zonas.get(i).addHijo(nHijo);
+			}
+			
+		}
 	}
 
 	public void mostrarLog() {
@@ -202,6 +233,12 @@ public class Casino {
 	{   if (observadores!=null)
 			observadores.remove(obspart);
 	
+	}
+	
+	public static void main(String[] args) 
+	{
+		Casino test=new Casino();
+		System.out.println("Fin creación de casino");
 	}
 
 }
