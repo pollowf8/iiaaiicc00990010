@@ -187,6 +187,7 @@ public class Casino {
 		 * Rango inicial: primer 20%
 		 */
 		int finRango1=(int) (this.MAXZonas*0.2);
+		int finRango2=(int) (this.MAXZonas*0.6)+finRango1-1;
 		int nHijo;
 		Zona aux;
 		for (int i=0; i<finRango1; i++){
@@ -199,6 +200,30 @@ public class Casino {
 			}
 			aux.addHijo(i+1);			
 		}
+		// TODO Generar 1 camino hacia atrás
+		for (int i=finRango1; i<finRango2; i++){
+			Random r=new Random();
+			nHijo=r.nextInt(this.MAXZonas-this.MAXSalidas-i-2)+i+2;
+			aux=this.zonas.get(i);
+			while (aux.getHijos().size()<4){
+				if (!aux.getHijos().contains(nHijo)) aux.addHijo(nHijo);
+				nHijo=r.nextInt(this.MAXZonas-this.MAXSalidas-i-2)+i+2;
+			}
+			aux.addHijo(i+1);			
+		}
+		
+		// TODO Generar 1 camino hacia delante
+		for (int i=finRango2; i<this.MAXZonas-this.MAXSalidas; i++){
+			Random r=new Random();
+			nHijo=r.nextInt(i);
+			aux=this.zonas.get(i);
+			while (aux.getHijos().size()<4){
+				if (!aux.getHijos().contains(nHijo)) aux.addHijo(nHijo);
+				nHijo=r.nextInt(i);
+			}
+			aux.addHijo(i+1);			
+		}
+		
 	}
 
 	public void mostrarLog() {
