@@ -175,25 +175,29 @@ public class Casino {
 	/**
 	 * Genera un grafo conexo entre las zonas de una forma determinada:
 	 * (Sea el número de zonas de 0 a MAXZonas-MAXSalidas-1)
+	 * - Todas las zonas tienen camino hacia la siguiente
 	 * - Primeras 20% zonas: cada zona i de este rango enlaza con 4 zonas j tal que j>i
-	 * - Siguientes 60% zonas: cada zona i de este rango enlaza con 3 zonas tal que j>i y con una tal que j<i
+	 * - Siguientes 60% zonas: cada zona i de este rango enlaza con 3 zonas tal que j>i y con 1 tal que j<i
 	 * - Ultimas 20% zonas: cada zona i de este rango enlaza con 4 zonas j tal que j<i
-	 * - Cada zona conectada no dista más de un 20% de la longitud total de las zonas. Ejemplo: sean 100 zonas y
-	 * está generando la zona 53, no habrá conexiones para esta zona más lejos del rango 33-73 (excluyendo la 53).
-	 * Por lo tanto, todas las zonas tienen camino a otras zonas, excepto las 3 últimas, que salen al exterior.
+	 * Por lo tanto, todas las zonas tienen camino a otras zonas (5 salidas en total) y no queda ninguna sin conectar, 
+	 * excepto las 3 últimas, que salen al exterior.
 	 */
 	private void generaCaminos() {
-		/* rango en el que se van a generar las salidas para una zona. 20% del total */
-		int ambito=(int) (this.MAXZonas*0.2);
-		int finRango1=ambito;
+		/*
+		 * Rango inicial: primer 20%
+		 */
+		int finRango1=(int) (this.MAXZonas*0.2);
 		int nHijo;
+		Zona aux;
 		for (int i=0; i<finRango1; i++){
 			Random r=new Random();
-			for (int j=0; j<4; j++){
-				nHijo=r.nextInt(ambito)+i+1;
-				this.zonas.get(i).addHijo(nHijo);
+			nHijo=r.nextInt(this.MAXZonas-this.MAXSalidas-i-2)+i+2;
+			aux=this.zonas.get(i);
+			while (aux.getHijos().size()<4){
+				if (!aux.getHijos().contains(nHijo)) aux.addHijo(nHijo);
+				nHijo=r.nextInt(this.MAXZonas-this.MAXSalidas-i-2)+i+2;
 			}
-			
+			aux.addHijo(i+1);			
 		}
 	}
 

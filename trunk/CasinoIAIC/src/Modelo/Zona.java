@@ -14,7 +14,6 @@ public class Zona {
 	private int busqueda;
 	private int apuesta;
 	private int premio;
-	private ArrayList<Integer> padres;
 	private ArrayList<Integer> hijos;
 	private boolean fin;
 	
@@ -37,8 +36,7 @@ public class Zona {
 		this.busqueda=busqueda;
 		this.apuesta=apuesta;
 		this.premio=premio;
-		this.hijos=new ArrayList<Integer>();
-		this.padres=new ArrayList<Integer>();
+		this.hijos=new ArrayList<Integer>(5);
 	}
 
 	public int getJuego() {
@@ -88,21 +86,11 @@ public class Zona {
 			return -1;
 			}
 	}
-	
-	public void addPadre(int padre){
-		padres.add(padre);
-	}
-	
-	public int getNumPadres() {
-		return padres.size();
-	}
-	
-	public int getPadre(int indice){
-		try{
-		return this.padres.get(indice);
-		} catch (ArrayIndexOutOfBoundsException e){
-			return -1;
-			}
-	}
-	
+
+	/**
+	 * @return the hijos
+	 */
+	public ArrayList<Integer> getHijos() {
+		return hijos;
+	}	
 }
