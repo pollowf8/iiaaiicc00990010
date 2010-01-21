@@ -138,6 +138,7 @@ public class Casino {
 		// La zona es salida
 		Zona actual=this.zonas.get(zona);
 		System.out.println("ENTRANDO EN ZONA: "+actual.getIndice());
+		actual.setVisitada(true);
 		if (actual.isFin()) return true;
 		// CASO RECURSIVO
 		else {
@@ -151,7 +152,7 @@ public class Casino {
 			// CASO RECURSIVO 1: Todos los hijos visitados
 			if (i==actual.getNumHijos()){
 				// CASO RECURSIVO 1A: No quedan zonas a las que retroceder
-				if (this.pila.peek()==null) {
+				if (this.pila.isEmpty()) {
 					System.out.println("TODOS LOS CAMINOS BLOQUEADOS. RIP.");
 					return false;
 				}
