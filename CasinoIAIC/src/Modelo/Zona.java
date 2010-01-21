@@ -10,26 +10,41 @@ import java.util.ArrayList;
  *
  */
 public class Zona {
+	private int indice;
 	private int juego;
 	private int busqueda;
 	private int apuesta;
 	private int premio;
 	private ArrayList<Integer> hijos;
 	private boolean fin;
-	private boolean abierta;
+	private boolean visitada;
 	
 	/**
-	 * @return the abierta
+	 * @return the indice
 	 */
-	public boolean isAbierta() {
-		return abierta;
+	public int getIndice() {
+		return indice;
 	}
 
 	/**
-	 * @param abierta the abierta to set
+	 * @param indice the indice to set
 	 */
-	public void setAbierta(boolean abierta) {
-		this.abierta = abierta;
+	public void setIndice(int indice) {
+		this.indice = indice;
+	}
+
+	/**
+	 * @return the visitada
+	 */
+	public boolean isVisitada() {
+		return visitada;
+	}
+
+	/**
+	 * @param visitada the visitada to set
+	 */
+	public void setVisitada(boolean visitada) {
+		this.visitada = visitada;
 	}
 
 	/**
@@ -46,7 +61,8 @@ public class Zona {
 		this.fin = fin;
 	}
 	
-	public Zona(int juego, int busqueda, int apuesta, int premio){
+	public Zona(int indice, int juego, int busqueda, int apuesta, int premio){
+		this.indice=indice;
 		this.juego=juego;
 		this.busqueda=busqueda;
 		this.apuesta=apuesta;

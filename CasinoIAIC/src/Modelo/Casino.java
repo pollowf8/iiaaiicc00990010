@@ -144,16 +144,26 @@ public class Casino {
 		else {
 			// Elegimos el hijo con mayor índice y que no ha sido visitado aún
 			int i=0;
-			while (i<actual.getNumHijos() && zonas.get(actual.getHijos().get(i)).isAbierta()){
+			while (i<actual.getNumHijos() && zonas.get(actual.getHijos().get(i)).isVisitada()){
 				i++;
 			}
+			Zona siguiente;
+			
+			// CASO RECURSIVO 1: Todos los hijos visitados
+			if (i==actual.getNumHijos()){
+				// CASO RECURSIVO 1A: No quedan zonas a las que retroceder
+				if (this.pila.peek()==null) return false;
+				// CASO RECURSIVO 1B: Retrocedemos a la zona anterior
+				else {
+					siguiente=this.pila.pop();
+					return this.juegaZona(siguiente.getIndice());
+				}
+			}
 			// TODO
-			// Si todos los hijos ya han sido visitados volvemos a la zona anterior
-			// Si la zona anterior es NULL, nos hemos quedado sin salir -> MUERTE
+			// CASO RECURSIVO 2: Tenemos un hijo sin visitar. Ejecutamos su juego/busqueda
 			
-			// Si no, ejecutamos el juego del hijo
-			// Si no encuentra solución, volvemos a ejecutar el método con la zona actual
-			
+			// CASO RECURSIVO 2A: Encuentra solución. Apilamos zona y la jugamos.
+			// CASO RECURSIVO 2B: No encuentra solución. Marcamos como visitada y jugamos de nuevo la actual.
 			return false;
 		}
 	}
@@ -195,7 +205,7 @@ public class Casino {
 				nB=(int)asignada/this.MAXJuegos;
 			}
 			/* asigna el juego y la búsqueda */
-			this.zonas.add(new Zona(nJ,nB,0,0));
+			this.zonas.add(new Zona(i,nJ,nB,0,0));
 			/* marcado */
 			usadas[nJ][nB]=true;
 		}
