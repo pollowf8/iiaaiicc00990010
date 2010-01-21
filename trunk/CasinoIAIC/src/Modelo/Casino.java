@@ -159,12 +159,21 @@ public class Casino {
 					return this.juegaZona(siguiente.getIndice());
 				}
 			}
-			// TODO
+
 			// CASO RECURSIVO 2: Tenemos un hijo sin visitar. Ejecutamos su juego/busqueda
-			
-			// CASO RECURSIVO 2A: Encuentra solución. Apilamos zona y la jugamos.
+			siguiente=this.zonas.get(i);
+			Juego juego=this.juegos[siguiente.getJuego()];
+			Busqueda bus=this.busquedas[siguiente.getBusqueda()];
+			Juego sol=bus.resuelve(juego);
+			// CASO RECURSIVO 2A: Encuentra solución. Apilamos zona actual y jugamos siguiente.
+			if (sol.isGoal()) {
+				this.pila.push(actual);
+				return this.juegaZona(siguiente.getIndice());
+			} else {
 			// CASO RECURSIVO 2B: No encuentra solución. Marcamos como visitada y jugamos de nuevo la actual.
-			return false;
+				siguiente.setVisitada(true);
+				return this.juegaZona(actual.getIndice());
+			}
 		}
 	}
 
