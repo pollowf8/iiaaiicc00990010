@@ -136,7 +136,6 @@ public class Casino {
 	}
 	
 	private boolean juegaZona(int zona) {
-		// TODO Auto-generated method stub
 		// CASO BASE
 		// La zona es salida
 		Zona actual=this.zonas.get(zona);
@@ -144,6 +143,16 @@ public class Casino {
 		// CASO RECURSIVO
 		else {
 			// Elegimos el hijo con mayor índice y que no ha sido visitado aún
+			int i=0;
+			while (i<actual.getNumHijos() && zonas.get(actual.getHijos().get(i)).isAbierta()){
+				i++;
+			}
+			// TODO
+			// Si todos los hijos ya han sido visitados volvemos a la zona anterior
+			// Si la zona anterior es NULL, nos hemos quedado sin salir -> MUERTE
+			
+			// Si no, ejecutamos el juego del hijo
+			// Si no encuentra solución, volvemos a ejecutar el método con la zona actual
 			
 			return false;
 		}
