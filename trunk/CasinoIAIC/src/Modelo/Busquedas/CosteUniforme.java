@@ -16,39 +16,44 @@ public class CosteUniforme implements Busqueda{
 		PriorityQueue<Juego> colaAbiertos=new PriorityQueue<Juego>(1,new ComparatorCosteUniforme());
 		colaAbiertos.offer(inicial);
 		Juego juego=null;
-		while(!fin){
-			juego=colaAbiertos.poll();
-			if (juego.isGoal()){
-				// Si el juego es igual que el estado final, se guarda en su camino toda la información de la búsqueda para mostrarla después
-				fin=true;
-				String camino=juego.getCamino()+"Nodos generados:"+generados+" ; Nodos expandidos:"+expandidos+" ; Coste: "+juego.getCoste()+
-								" ; Profundidad:"+juego.getProfundidad();
-				juego.setCamino(camino);
-			}
-			else{
-				// como no es estado final, se cierra, ya no se va a mirar más
-				listaCerrados.add(juego);
-				// expandir un nuevo nodo
-				expandidos++;
-				// sucesores del nodo que se acaba de cerrar
-				Vector<Juego> sucesores=juego.expandir();
-				// si uno de los sucesores ya aparece en la lista de nodos cerrados, no se añade a la cola de abiertos, así se evitan ciclos
-				for (int i=0;i<sucesores.size();i++){
-					if (!listaCerrados.contains(sucesores.elementAt(i))){
-						colaAbiertos.offer(sucesores.elementAt(i));
-						generados++;
+		try{
+			while(!fin){
+				juego=colaAbiertos.poll();
+				if (juego.isGoal()){
+					// Si el juego es igual que el estado final, se guarda en su camino toda la información de la búsqueda para mostrarla después
+					fin=true;
+					String camino=juego.getCamino()+"Nodos generados:"+generados+" ; Nodos expandidos:"+expandidos+" ; Coste: "+juego.getCoste()+
+									" ; Profundidad:"+juego.getProfundidad();
+					juego.setCamino(camino);
+				}
+				else{
+					// como no es estado final, se cierra, ya no se va a mirar más
+					listaCerrados.add(juego);
+					// expandir un nuevo nodo
+					expandidos++;
+					// sucesores del nodo que se acaba de cerrar
+					Vector<Juego> sucesores=juego.expandir();
+					// si uno de los sucesores ya aparece en la lista de nodos cerrados, no se añade a la cola de abiertos, así se evitan ciclos
+					for (int i=0;i<sucesores.size();i++){
+						if (!listaCerrados.contains(sucesores.elementAt(i))){
+							colaAbiertos.offer(sucesores.elementAt(i));
+							generados++;
+						}
 					}
 				}
 			}
+			return juego;
 		}
-		return juego;
+		catch (Error e){
+			return juego;
+		}
 	}
 	
 	public static void main(String[] args){
-		Juego inicial=new Misioneros();
+		Juego inicial=new Garrafas();
 		CosteUniforme busqueda=new CosteUniforme();
-		System.out.print("Búsqueda en anchura Garrafas:\nEstado inicial: "+inicial.toString());
-		Juego solucion=(Misioneros)busqueda.resuelve(inicial);
+		System.out.print("Búsqueda coste uniforme:\nEstado inicial: "+inicial.toString());
+		Juego solucion=(Garrafas)busqueda.resuelve(inicial);
 		System.out.print(solucion.getCamino());
 		System.out.print("\nSolución: "+solucion.toString());
 	}

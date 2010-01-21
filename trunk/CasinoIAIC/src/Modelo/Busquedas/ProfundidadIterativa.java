@@ -72,9 +72,9 @@ public class ProfundidadIterativa implements Busqueda{
 	 * @param args, no se usa
 	 */
 	public static void main(String[] args){
-		Puzzle8 inicial=new Puzzle8();
+		Juego inicial=new Puzzle8();
 		ProfundidadIterativa busqueda=new ProfundidadIterativa();
-		Puzzle8 solucion=(Puzzle8)busqueda.resuelve(inicial);
+		Juego solucion=(Puzzle8)busqueda.resuelve(inicial);
 		System.out.print("Búsqueda en profundidad iterativa Puzzle8:\nEstado inicial: "+inicial.toString());
 		if (solucion.isGoal()){
 			System.out.print(solucion.getCamino());
