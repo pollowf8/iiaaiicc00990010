@@ -3,6 +3,7 @@ package Modelo;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Random;
+import java.util.Stack;
 
 import Controlador.Controlador;
 import Modelo.Busquedas.*;
@@ -17,11 +18,16 @@ public class Casino {
 
 	protected LinkedList<ObservadorPartida>observadores= new LinkedList<ObservadorPartida>();
 	private int vidas;
-	private int zonaActual;
 	private ArrayList<Zona> zonas;
 	private Juego juegos[];
 	private Busqueda busquedas[];
 	private FicheroTxt txt;
+	private Stack<Zona> pila;
+	
+	/**
+	 * Zona por la que se comienza a jugar
+	 */
+	private final int zonaInicial=0;
 	
 	/**
 	 * Número máximo de búsquedas para resolver el juego
@@ -45,12 +51,12 @@ public class Casino {
 	
 	public Casino(){
 		this.vidas=29000;
-		this.zonaActual=-1;
 		this.initJuegos();
 		this.initBusquedas();
 		this.initZonas();
 		this.generaCaminos();
 		txt= new FicheroTxt();
+		pila=new Stack<Zona>();
 	}
 	
 	private void initBusquedas() {
@@ -108,7 +114,10 @@ public class Casino {
 		}
 	}
 
-	public boolean jugar(){
+	public boolean jugar(){		
+		/*
+		 * Pruebas de escritura en el log
+		 */
 		escribeEstado("fas");
 		escribeEstado("asfasf");
 		escribeEstado("fas");
@@ -121,9 +130,25 @@ public class Casino {
 		txt.escribeFichero("probando2");
 		txt.escribeFichero("probando3");
 		txt.escribeFichero("probando4");
-		return true;
+		
+		
+		return this.juegaZona(this.zonaInicial);
 	}
 	
+	private boolean juegaZona(int zona) {
+		// TODO Auto-generated method stub
+		// CASO BASE
+		// La zona es salida
+		Zona actual=this.zonas.get(zona);
+		if (actual.isFin()) return true;
+		// CASO RECURSIVO
+		else {
+			// Elegimos el hijo con mayor índice y que no ha sido visitado aún
+			
+			return false;
+		}
+	}
+
 	/**
 	 * Inicializa las zonas asignando aleatoriamente y sin repetir un juego y una búsqueda 
 	 * a cada una. Por lo tanto se crean (MAXJuegos*MAXBusquedas) zonas.
