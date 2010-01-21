@@ -137,7 +137,9 @@ public class Casino {
 		// CASO BASE
 		// La zona es salida
 		Zona actual=this.zonas.get(zona);
+		System.out.println("\n------------------------------------------");
 		System.out.println("ENTRANDO EN ZONA: "+actual.getIndice());
+		System.out.println("------------------------------------------");
 		actual.setVisitada(true);
 		if (actual.isFin()) return true;
 		// CASO RECURSIVO
@@ -176,6 +178,7 @@ public class Casino {
 			// CASO RECURSIVO 2A: Encuentra solución. Apilamos zona actual y jugamos siguiente.
 			if (sol.isGoal()) {
 				this.pila.push(actual);
+				System.out.println("ÉXITO");
 				return this.juegaZona(siguiente.getIndice());
 			} else {
 			// CASO RECURSIVO 2B: No encuentra solución. Marcamos como visitada y jugamos de nuevo la actual.
