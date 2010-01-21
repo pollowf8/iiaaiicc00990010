@@ -178,6 +178,7 @@ public class Casino {
 				return this.juegaZona(siguiente.getIndice());
 			} else {
 			// CASO RECURSIVO 2B: No encuentra solución. Marcamos como visitada y jugamos de nuevo la actual.
+				System.out.println("BLOQUEADA ZONA "+siguiente.getIndice());
 				siguiente.setVisitada(true);
 				return this.juegaZona(actual.getIndice());
 			}
