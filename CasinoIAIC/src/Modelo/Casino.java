@@ -161,7 +161,7 @@ public class Casino {
 			}
 
 			// CASO RECURSIVO 2: Tenemos un hijo sin visitar. Ejecutamos su juego/busqueda
-			siguiente=this.zonas.get(i);
+			siguiente=this.zonas.get(actual.getHijo(i));
 			Juego juego=this.juegos[siguiente.getJuego()];
 			Busqueda bus=this.busquedas[siguiente.getBusqueda()];
 			Juego sol=bus.resuelve(juego);
@@ -342,6 +342,8 @@ public class Casino {
 	{
 		Casino test=new Casino();
 		System.out.println("Fin creación de casino");
+		boolean fin=test.jugar();
+		System.out.println("Hay salida: "+fin);
 	}
 
 }
