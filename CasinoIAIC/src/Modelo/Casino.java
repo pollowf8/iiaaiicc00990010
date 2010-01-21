@@ -5,10 +5,8 @@ import java.util.LinkedList;
 import java.util.Random;
 import java.util.Stack;
 
-import Controlador.Controlador;
 import Modelo.Busquedas.*;
 import Modelo.Juegos.*;
-import Swing.Swing;
 
 /**
  * @author jga
