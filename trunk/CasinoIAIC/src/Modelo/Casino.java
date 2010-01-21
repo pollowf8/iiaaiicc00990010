@@ -173,18 +173,12 @@ public class Casino {
 	}
 	
 	/**
-	 * Genera un grafo conexo entre las zonas de una forma determinada:
-	 * (Sea el número de zonas de 0 a MAXZonas-MAXSalidas-1)
-	 * - Todas las zonas tienen camino hacia la siguiente
-	 * - Primeras 20% zonas: cada zona i de este rango enlaza con 4 zonas j tal que j>i
-	 * - Siguientes 60% zonas: cada zona i de este rango enlaza con 3 zonas tal que j>i y con 1 tal que j<i
-	 * - Ultimas 20% zonas: cada zona i de este rango enlaza con 4 zonas j tal que j<i
-	 * Por lo tanto, todas las zonas tienen camino a otras zonas (5 salidas en total) y no queda ninguna sin conectar, 
-	 * excepto las 3 últimas, que salen al exterior.
+	 * Genera un grafo conexo entre las zonas de una forma determinada.
 	 */
 	private void generaCaminos() {
 		/*
 		 * Rango inicial: primer 20%
+		 * Genera 4 caminos hacia delante y uno a la zona siguiente.
 		 */
 		int finRango1=(int) (this.MAXZonas*0.2);
 		int finRango2=(int) (this.MAXZonas*0.6)+finRango1-1;
@@ -200,29 +194,56 @@ public class Casino {
 			}
 			aux.addHijo(i+1);			
 		}
-		// TODO Generar 1 camino hacia atrás
+		
+		/*
+		 * Rango intermedio: 60%
+		 * Genera 3 caminos hacia delante, uno hacia atrás y uno a la zona siguiente
+		 */
 		for (int i=finRango1; i<finRango2; i++){
 			Random r=new Random();
 			nHijo=r.nextInt(this.MAXZonas-this.MAXSalidas-i-2)+i+2;
 			aux=this.zonas.get(i);
-			while (aux.getHijos().size()<4){
+			while (aux.getHijos().size()<3){
 				if (!aux.getHijos().contains(nHijo)) aux.addHijo(nHijo);
 				nHijo=r.nextInt(this.MAXZonas-this.MAXSalidas-i-2)+i+2;
 			}
-			aux.addHijo(i+1);			
+			aux.addHijo(i+1);
+			nHijo=r.nextInt(i);
+			aux.addHijo(nHijo);
 		}
 		
-		// TODO Generar 1 camino hacia delante
+		/*
+		 * Rango final: último 20%
+		 * Genera 3 caminos hacia atrás, 1 hacia delante y otro a la siguiente zona.
+		 */
 		for (int i=finRango2; i<this.MAXZonas-this.MAXSalidas; i++){
 			Random r=new Random();
 			nHijo=r.nextInt(i);
 			aux=this.zonas.get(i);
-			while (aux.getHijos().size()<4){
+			while (aux.getHijos().size()<3){
 				if (!aux.getHijos().contains(nHijo)) aux.addHijo(nHijo);
 				nHijo=r.nextInt(i);
 			}
-			aux.addHijo(i+1);			
+			aux.addHijo(i+1);
+			nHijo=r.nextInt(this.MAXZonas-i-2)+i+2;
+			aux.addHijo(nHijo);
 		}
+		
+		/*
+		 * ASIGNACIÓN DE SALIDAS
+		 * Genera 2 caminos hacia cada salida en una zona aleatoria que se encuentre en la segunda mitad
+		 */
+		/*
+		int zonaSal1, zonaSal2;
+		for (int i=0; i<this.MAXSalidas; i++){
+			Random r=new Random();
+			zonaSal1=r.nextInt((int) (this.MAXZonas*0.5))+(int) (this.MAXZonas*0.5);
+			zonaSal2=r.nextInt((int) (this.MAXZonas*0.5))+(int) (this.MAXZonas*0.5);
+			this.zonas.get(zonaSal1).addHijo(this.MAXZonas-this.MAXSalidas+i);
+			this.zonas.get(zonaSal2).addHijo(this.MAXZonas-this.MAXSalidas+i);
+		}
+		*/
+		
 		
 	}
 
