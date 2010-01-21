@@ -23,7 +23,7 @@ public class Garrafas extends Juego{
 	public Garrafas(){
 		gra=0;
 		peq=0;
-		valorHeur=0;
+		valorHeur=-1;
 		coste=0;
 		profundidad=0;
 		camino="";
@@ -40,6 +40,7 @@ public class Garrafas extends Juego{
 	private Garrafas(Garrafas g,int cos,String cam){
 		gra=g.gra;
 		peq=g.peq;
+		valorHeur=g.valorHeur;
 		coste=g.coste+cos;
 		profundidad=g.profundidad+1;
 		camino=g.camino+cam;
