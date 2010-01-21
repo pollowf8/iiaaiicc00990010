@@ -16,7 +16,22 @@ public class Zona {
 	private int premio;
 	private ArrayList<Integer> hijos;
 	private boolean fin;
+	private boolean abierta;
 	
+	/**
+	 * @return the abierta
+	 */
+	public boolean isAbierta() {
+		return abierta;
+	}
+
+	/**
+	 * @param abierta the abierta to set
+	 */
+	public void setAbierta(boolean abierta) {
+		this.abierta = abierta;
+	}
+
 	/**
 	 * @return the fin
 	 */
@@ -72,7 +87,15 @@ public class Zona {
 	}
 
 	public void addHijo(int hijo){
-		hijos.add(hijo);
+		// Insertamos ordenando de mayor a menor
+		if (this.hijos.size()==0) hijos.add(0, hijo);
+		else{
+			int i=0;
+			while (i<this.hijos.size() && this.hijos.get(i)>hijo){
+				i++;
+			}
+			hijos.add(i, hijo);
+		}
 	}
 	
 	public int getNumHijos() {
