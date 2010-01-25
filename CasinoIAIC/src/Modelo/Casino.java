@@ -35,7 +35,7 @@ public class Casino {
 	/**
 	 * Número máximo de juegos disponibles para resolver
 	 */
-	private final int MAXJuegos=9;
+	private final int MAXJuegos=10;
 	
 	/**
 	 * Número máximo de zonas del casino
@@ -125,6 +125,9 @@ public class Casino {
 				break;
 			case 8: 
 				this.juegos[i]=new Reinas();
+				break;
+			case 9: 
+				this.juegos[i]=new Colores();
 				break;
 			}
 		}

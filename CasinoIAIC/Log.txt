@@ -2,89 +2,47 @@
 ------------------------------------------
 ENTRANDO EN ZONA: 0
 ------------------------------------------
-JUGANDO ZONA: 46
-Juego: Relojes
-Reloj 11 restante: 0 Reloj 7 restante: 0
+JUGANDO ZONA: 78
+Juego: Garrafas
+G=0L P=0L
 
 Búsqueda: AEstrella
-Resultado: Relojes
-Reloj 11 restante: 0 Reloj 7 restante: 0
-
-BLOQUEADA ZONA 46
-
-------------------------------------------
-ENTRANDO EN ZONA: 0
-------------------------------------------
-JUGANDO ZONA: 44
-Juego: Puzzle 8
-[2 8 3][1 6 4][7 0 5]
-
-Búsqueda: Enfriamiento simulado
-Resultado: Puzzle 8
-[1 2 3][8 0 4][7 6 5]
-
-ÉXITO
-
-------------------------------------------
-ENTRANDO EN ZONA: 44
-------------------------------------------
-JUGANDO ZONA: 73
-Juego: Relojes
-Reloj 11 restante: 0 Reloj 7 restante: 0
-
-Búsqueda: Profundidad limitada
-Resultado: Relojes
-Reloj 11 restante: 11 Reloj 7 restante: 3
-
-ÉXITO
-
-------------------------------------------
-ENTRANDO EN ZONA: 73
-------------------------------------------
-JUGANDO ZONA: 76
-Juego: Misioneros y caníbales
-Misioneros izquierda: 3 Canibales izquierda: 3
-
-Búsqueda: Primero en profundidad
-Resultado: Misioneros y caníbales
-Misioneros izquierda: 0 Canibales izquierda: 0
-
-ÉXITO
-
-------------------------------------------
-ENTRANDO EN ZONA: 76
-------------------------------------------
-JUGANDO ZONA: 78
-Juego: Sudoku
-0 0 2|0 3 1|0 0 8
-0 4 0|0 0 0|0 1 3
-8 1 0|7 0 0|0 0 0
------------------
-0 3 0|0 5 0|0 6 2
-4 0 7|3 8 6|9 0 1
-6 5 0|0 2 0|0 8 0
------------------
-0 0 0|0 0 5|0 7 9
-2 7 0|0 0 0|0 3 0
-9 0 0|4 7 0|6 0 0
-
-Búsqueda: Primero en profundidad
-Resultado: Sudoku
-5 9 2|6 3 1|7 4 8
-7 4 6|5 9 8|2 1 3
-8 1 3|7 4 2|5 9 6
------------------
-1 3 8|9 5 7|4 6 2
-4 2 7|3 8 6|9 5 1
-6 5 9|1 2 4|3 8 7
------------------
-3 6 4|2 1 5|8 7 9
-2 7 5|8 6 9|1 3 4
-9 8 1|4 7 3|6 2 5
+Resultado: Garrafas
+G=2L P=0L
 
 ÉXITO
 
 ------------------------------------------
 ENTRANDO EN ZONA: 78
+------------------------------------------
+JUGANDO ZONA: 94
+Juego: Colores
+[ 1  1  1 ]
+[ 2  1  1 ]
+[ 2  2  2 ]
+
+Búsqueda: Profundidad iterativa
+Resultado: Colores
+[ 2  1  2 ]
+[ 1  2  1 ]
+[ 2  1  2 ]
+
+ÉXITO
+
+------------------------------------------
+ENTRANDO EN ZONA: 94
+------------------------------------------
+JUGANDO ZONA: 99
+Juego: Hanoi
+Varilla A=[4321] ; Varilla B=[] ; Varilla C=[]
+
+Búsqueda: Primero en anchura
+Resultado: Hanoi
+Varilla A=[] ; Varilla B=[] ; Varilla C=[4321]
+
+ÉXITO
+
+------------------------------------------
+ENTRANDO EN ZONA: 99
 ------------------------------------------
 Hay salida: true
