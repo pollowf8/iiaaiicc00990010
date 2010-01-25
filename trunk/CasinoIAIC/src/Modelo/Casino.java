@@ -170,34 +170,35 @@ public class Casino {
 			if (i==actual.getNumHijos()){
 				// CASO RECURSIVO 1A: No quedan zonas a las que retroceder
 				if (this.pila.isEmpty()) {
-					System.out.println("TODOS LOS CAMINOS BLOQUEADOS. RIP.");
+					//System.out.println("TODOS LOS CAMINOS BLOQUEADOS. RIP.");
+					escribeEstado("TODOS LOS CAMINOS BLOQUEADOS. RIP.");
 					return false;
 				}
 				// CASO RECURSIVO 1B: Retrocedemos a la zona anterior
 				else {
 					siguiente=this.pila.pop();
-					System.out.println("HIJOS BLOQUEADOS. Retrocediendo a zona "+siguiente.getIndice());
+					escribeEstado("HIJOS BLOQUEADOS. Retrocediendo a zona "+siguiente.getIndice());
 					return this.juegaZona(siguiente.getIndice());
 				}
 			}
 
 			// CASO RECURSIVO 2: Tenemos un hijo sin visitar. Ejecutamos su juego/busqueda
 			siguiente=this.zonas.get(actual.getHijo(i));
-			System.out.println("JUGANDO ZONA: "+siguiente.getIndice());
+			escribeEstado("JUGANDO ZONA: "+siguiente.getIndice());
 			Juego juego=this.juegos[siguiente.getJuego()];
 			Busqueda bus=this.busquedas[siguiente.getBusqueda()];
-			System.out.println("Juego: "+juego.toString());
-			System.out.println("Búsqueda: "+bus.toString());
+			escribeEstado("Juego: "+juego.toString());
+			escribeEstado("Búsqueda: "+bus.toString());
 			Juego sol=bus.resuelve(juego);
-			System.out.println("Resultado: "+sol.toString());
+			escribeEstado("Resultado: "+sol.toString());
 			// CASO RECURSIVO 2A: Encuentra solución. Apilamos zona actual y jugamos siguiente.
 			if (sol.isGoal()) {
 				this.pila.push(actual);
-				System.out.println("ÉXITO");
+				escribeEstado("ÉXITO");
 				return this.juegaZona(siguiente.getIndice());
 			} else {
 			// CASO RECURSIVO 2B: No encuentra solución. Marcamos como visitada y jugamos de nuevo la actual.
-				System.out.println("BLOQUEADA ZONA "+siguiente.getIndice());
+				escribeEstado("BLOQUEADA ZONA "+siguiente.getIndice());
 				siguiente.setVisitada(true);
 				return this.juegaZona(actual.getIndice());
 			}
@@ -337,6 +338,7 @@ public class Casino {
 	 */	
 	public void escribeEstado(String estado)
 	{ 
+			txt.escribeFichero(estado);
 			for (ObservadorPartida o: observadores)
 				o.escribeEstado(estado);
 	}
