@@ -7,12 +7,13 @@ import java.util.Stack;
 
 import Modelo.Busquedas.*;
 import Modelo.Juegos.*;
+import Swing.Swing;
 
 /**
  * @author jga
  *
  */
-public class Casino {
+public class Casino{
 
 	protected LinkedList<ObservadorPartida>observadores= new LinkedList<ObservadorPartida>();
 	private int vidas;
@@ -133,12 +134,16 @@ public class Casino {
 		}
 	}
 
+	
 	public boolean jugar(){	
 		boolean fin=this.juegaZona(this.zonaInicial);
 		escribeEstado("Hay salida: "+fin);
+		finiquitarPartida();
 		return fin;
 	}
 	
+
+
 	private boolean juegaZona(int zona) {
 		// CASO BASE
 		// La zona es salida
@@ -195,6 +200,7 @@ public class Casino {
 			}
 		}
 	}
+
 
 	/**
 	 * Inicializa las zonas asignando aleatoriamente y sin repetir un juego y una búsqueda 
@@ -332,6 +338,11 @@ public class Casino {
 			txt.escribeFichero(estado);
 			for (ObservadorPartida o: observadores)
 				o.escribeEstado(estado);
+	}
+	
+	private void finiquitarPartida() {
+		for (ObservadorPartida o: observadores)
+			o.terminar();
 	}
 	
 	/**

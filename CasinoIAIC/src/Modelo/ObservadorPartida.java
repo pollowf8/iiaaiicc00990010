@@ -12,4 +12,5 @@ package Modelo;
 public interface ObservadorPartida{
 
 	public void escribeEstado(String estado);
+	public void terminar();
 }

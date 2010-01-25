@@ -1,0 +1,132 @@
+
+------------------------------------------
+ENTRANDO EN ZONA: 0
+------------------------------------------
+JUGANDO ZONA: 92
+Juego: Juego quince
+[10 10 4 7]
+[6 7 1 10]
+[4 7 6 10]
+[4 6 10 1]
+
+Búsqueda: Escalada simple
+Resultado: Juego quince
+[10 10 4 7]
+[6 7 1 10]
+[4 7 6 10]
+[4 6 10 1]
+
+BLOQUEADA ZONA 92
+
+------------------------------------------
+ENTRANDO EN ZONA: 0
+------------------------------------------
+JUGANDO ZONA: 73
+Juego: Lobo, cabra, col
+Granjero=1 ; Lobo=1 ; Cabra=1 ; Col=1
+
+Búsqueda: AEstrella
+Resultado: Lobo, cabra, col
+Granjero=1 ; Lobo=1 ; Cabra=1 ; Col=1
+
+BLOQUEADA ZONA 73
+
+------------------------------------------
+ENTRANDO EN ZONA: 0
+------------------------------------------
+JUGANDO ZONA: 65
+Juego: Misioneros y caníbales
+Misioneros izquierda: 3 Canibales izquierda: 3
+
+Búsqueda: Primero en profundidad
+Resultado: Misioneros y caníbales
+Misioneros izquierda: 0 Canibales izquierda: 0
+
+ÉXITO
+
+------------------------------------------
+ENTRANDO EN ZONA: 65
+------------------------------------------
+JUGANDO ZONA: 93
+Juego: Colores
+[ 1  1  1 ]
+[ 2  1  1 ]
+[ 2  2  2 ]
+
+Búsqueda: Primero en profundidad
+Resultado: Colores
+[ 2  1  2 ]
+[ 1  2  1 ]
+[ 2  1  2 ]
+
+ÉXITO
+
+------------------------------------------
+ENTRANDO EN ZONA: 93
+------------------------------------------
+JUGANDO ZONA: 96
+Juego: Juego quince
+[10 10 4 7]
+[6 7 1 10]
+[4 7 6 10]
+[4 6 10 1]
+
+Búsqueda: Coste uniforme
+Resultado: Juego quince
+[0 0 0 0]
+[0 0 0 0]
+[0 0 6 0]
+[0 0 0 0]
+
+ÉXITO
+
+------------------------------------------
+ENTRANDO EN ZONA: 96
+------------------------------------------
+JUGANDO ZONA: 99
+Juego: Sudoku
+0 0 2|0 3 1|0 0 8
+0 4 0|0 0 0|0 1 3
+8 1 0|7 0 0|0 0 0
+-----------------
+0 3 0|0 5 0|0 6 2
+4 0 7|3 8 6|9 0 1
+6 5 0|0 2 0|0 8 0
+-----------------
+0 0 0|0 0 5|0 7 9
+2 7 0|0 0 0|0 3 0
+9 0 0|4 7 0|6 0 0
+
+Búsqueda: Profundidad limitada
+Resultado: Sudoku
+7 9 2|6 3 1|5 4 8
+5 4 6|9 0 0|0 1 3
+8 1 0|7 0 0|0 0 0
+-----------------
+0 3 0|0 5 0|0 6 2
+4 0 7|3 8 6|9 0 1
+6 5 0|0 2 0|0 8 0
+-----------------
+0 0 0|0 0 5|0 7 9
+2 7 0|0 0 0|0 3 0
+9 0 0|4 7 0|6 0 0
+
+BLOQUEADA ZONA 99
+
+------------------------------------------
+ENTRANDO EN ZONA: 96
+------------------------------------------
+JUGANDO ZONA: 97
+Juego: Garrafas
+G=0L P=0L
+
+Búsqueda: Profundidad limitada
+Resultado: Garrafas
+G=2L P=0L
+
+ÉXITO
+
+------------------------------------------
+ENTRANDO EN ZONA: 97
+------------------------------------------
+Hay salida: true

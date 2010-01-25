@@ -8,13 +8,24 @@ public class Principal {
 		public static void main(String[] args) 
 		{
 			try{
-				Controlador.getInstance();
-				Controlador.getInstance().creaCasino();
-				@SuppressWarnings("unused")
 				Swing interfaz=new Swing();
+				Controlador.getInstance();
+				while (true){
+					dormir(100);
+					while (interfaz.nuevaPartida()){
+						Controlador.getInstance().creaCasino();
+						interfaz.creaVentana();					
+					}
+				}
 			}
 			catch(NullPointerException e){
 				System.out.println("Error fatal");
 			}
-		}	
+		}
+		
+		private static void dormir(int i){
+			try {
+				Thread.sleep(i);
+			} catch (InterruptedException e) {}
+		}
 }
