@@ -8,6 +8,10 @@ import Modelo.Juegos.*;
 
 public class AEstrella implements Busqueda{
 
+	public String toString() {
+		return "AEstrella";
+	}
+
 	@Override
 	public Juego resuelve(Juego inicial) {
 		if (inicial.getValorHeur()==-1)

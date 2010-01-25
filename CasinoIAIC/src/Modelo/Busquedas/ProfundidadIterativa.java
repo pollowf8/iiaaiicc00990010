@@ -14,6 +14,10 @@ import Modelo.Juegos.*;
  */
 public class ProfundidadIterativa implements Busqueda{
 
+	public String toString() {
+		return "Profundidad iterativa";
+	}
+	
 	@Override
 	public Juego resuelve(Juego inicial){
 		boolean fin=false;

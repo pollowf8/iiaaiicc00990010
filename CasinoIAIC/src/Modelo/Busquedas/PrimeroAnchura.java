@@ -14,6 +14,10 @@ import Modelo.Juegos.*;
  */
 public class PrimeroAnchura implements Busqueda{
 
+	public String toString() {
+		return "Primero en anchura";
+	}
+	
 	@Override
 	public Juego resuelve(Juego inicial){
 		boolean fin=false;

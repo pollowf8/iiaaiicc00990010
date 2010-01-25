@@ -221,7 +221,7 @@ public class Puzzle8 extends Juego{
 	}
 	
 	public String toString(){
-		return "["+tablero[0]+" "+tablero[1]+" "+tablero[2]+"]["
+		return "Puzzle 8\n["+tablero[0]+" "+tablero[1]+" "+tablero[2]+"]["
 				+tablero[3]+" "+tablero[4]+" "+tablero[5]+"]["
 				+tablero[6]+" "+tablero[7]+" "+tablero[8]+"]\n";	
 	}

@@ -26,6 +26,10 @@ public class ProfundidadLimitada implements Busqueda{
 		profundidad=this.DEFAULTprof;
 	}
 
+	public String toString() {
+		return "Profundidad limitada";
+	}
+	
 	@Override
 	public Juego resuelve(Juego inicial){
 		boolean fin=false;

@@ -6,7 +6,11 @@ import java.util.Vector;
 import Modelo.Juegos.*;
 
 public class CosteUniforme implements Busqueda{
-
+	
+	public String toString() {
+		return "Coste uniforme";
+	}
+	
 	@Override
 	public Juego resuelve(Juego inicial) {
 		boolean fin=false;
