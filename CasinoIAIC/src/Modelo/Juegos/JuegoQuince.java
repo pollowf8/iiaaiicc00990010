@@ -6,7 +6,7 @@ import java.util.Vector;
  * Juego del quince. Se dispone de un tablero con 16 cartas, numeradas del 1 al 10. Con cada carta, se pueden hacer 3 operaciones: quitar 2 cartas que sean iguales,
  * sumarla con otra más si la suma vale 15, y sumar 3 cartas hasta que la suma sea 15. El objetivo del juego es minimizar el número de cartas que quedan al final
  * en el tablero.
- * @author Pablo Acevedo, Alberto Díez, Jorge Guirado
+ * @author Pablo Acevedo, Alfredo Díez, Jorge Guirado
  *
  */
 public class JuegoQuince extends Juego{

@@ -4,7 +4,7 @@ import java.util.Vector;
 
 /**
  * Juego de las garrafas. Tenemos 2 garrafas, una de 4L y otra de 3L. El juego consiste en obtener 2L en la garrafa grande y 0L en la pequeña.
- * @author Pablo Acevedo, Alberto Díez, Jorge Guirado
+ * @author Pablo Acevedo, Alfredo Díez, Jorge Guirado
  *
  */
 public class Garrafas extends Juego{

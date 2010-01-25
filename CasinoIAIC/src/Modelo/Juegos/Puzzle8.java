@@ -5,7 +5,7 @@ import java.util.Vector;
 /**
  * Juego del puzzle de 8. Se dispone de un tablero de 3*3 huecos, y tenemos 8 fichas, de forma que hay un hueco libre sobre el que se puede deslizar una
  * ficha cada vez. 
- * @author Pablo Acevedo, Alberto Díez, Jorge Guirado
+ * @author Pablo Acevedo, Alfredo Díez, Jorge Guirado
  *
  */
 public class Puzzle8 extends Juego{

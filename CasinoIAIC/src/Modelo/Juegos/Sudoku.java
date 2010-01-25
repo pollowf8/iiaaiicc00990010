@@ -5,7 +5,7 @@ import java.util.Vector;
 /**
  * Juego del sudoku. En cada posición sólo puede haber un único número del 1 al 9, que no se repetirá ni en la fila, ni en la columna, ni en el cuadrado 3x3 que se 
  * encuentre.
- * @author Pablo Acevedo, Alberto Díez, Jorge Guirado
+ * @author Pablo Acevedo, Alfredo Díez, Jorge Guirado
  *
  */
 public class Sudoku extends Juego{

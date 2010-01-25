@@ -5,7 +5,7 @@ import java.util.Vector;
 /**
  * Juego de los relojes. Disponemos de 2 relojes de arena, de 11 y 7 minutos respectivamente. Como operaciones, se puede dar la vuelta a un reloj, o dar la vuelta
  * a los dos simultaneamente, hasta que se agote uno de los 2. El objetivo es tener 3 minutos en uno de los relojes.
- * @author Pablo Acevedo, Alberto Díez, Jorge Guirado
+ * @author Pablo Acevedo, Alfredo Díez, Jorge Guirado
  *
  */
 public class Relojes extends Juego{

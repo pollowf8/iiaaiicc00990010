@@ -5,7 +5,7 @@ import java.util.Vector;
 /**
  * Juego de los misioneros y los caníbales. Tenemos 2 orillas, un barco, y un grupo de caníbales y misioneros que quieren cruzar de orilla. En el barco solo
  * caben 2 personas, y si en una orilla hay menos misioneros que caníbales, estos corren peligro.
- * @author Pablo Acevedo, Alberto Díez, Jorge Guirado
+ * @author Pablo Acevedo, Alfredo Díez, Jorge Guirado
  *
  */
 
