@@ -30,12 +30,12 @@ public class Casino {
 	/**
 	 * Número máximo de búsquedas para resolver el juego
 	 */
-	private final int MAXbusquedas=8;
+	private final int MAXbusquedas=10;
 	
 	/**
 	 * Número máximo de juegos disponibles para resolver
 	 */
-	private final int MAXJuegos=5;
+	private final int MAXJuegos=8;
 	
 	/**
 	 * Número máximo de zonas del casino
@@ -85,6 +85,12 @@ public class Casino {
 			case 7: 
 				this.busquedas[i]=new Voraz();
 				break;
+			case 8: 
+				this.busquedas[i]=new EscaladaSimple();
+				break;
+			case 9: 
+				this.busquedas[i]=new EnfriamientoSimulado();
+				break;
 			}
 		}
 	}
@@ -107,6 +113,15 @@ public class Casino {
 				break;
 			case 4: 
 				this.juegos[i]=new Puzzle8();
+				break;
+			case 5: 
+				this.juegos[i]=new JuegoQuince();
+				break;
+			case 6: 
+				this.juegos[i]=new Relojes();
+				break;
+			case 7: 
+				this.juegos[i]=new Sudoku();
 				break;
 			}
 		}
