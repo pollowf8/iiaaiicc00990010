@@ -2,9 +2,22 @@ package Modelo.Juegos;
 
 import java.util.Vector;
 
+/**
+ * Juego del quince. Se dispone de un tablero con 16 cartas, numeradas del 1 al 10. Con cada carta, se pueden hacer 3 operaciones: quitar 2 cartas que sean iguales,
+ * sumarla con otra más si la suma vale 15, y sumar 3 cartas hasta que la suma sea 15. El objetivo del juego es minimizar el número de cartas que quedan al final
+ * en el tablero.
+ * @author Pablo Acevedo, Alberto Díez, Jorge Guirado
+ *
+ */
 public class JuegoQuince extends Juego{
+	/**
+	 * El estado se representa con un array de 16 posiciones. En cada una, está el valor de la carta. Si la carta se ha quitado hay un 0.
+	 */
 	private int[] tablero;
 	
+	/**
+	 * Constructora de estado inicial.
+	 */
 	public JuegoQuince(){
 		tablero=new int[]{10,10,4,7,6,7,1,10,4,7,6,10,4,6,10,1};
 		valorHeur=-1;
@@ -13,6 +26,12 @@ public class JuegoQuince extends Juego{
 		camino="";
 	}
 	
+	/**
+	 * Constructora de sucesor.
+	 * @param juego estado padre
+	 * @param cos coste acumulado
+	 * @param cam camino hasta este estado
+	 */
 	private JuegoQuince(JuegoQuince juego,int cos,String cam){
 		tablero=new int[16];
 		for (int i=0;i<tablero.length;i++)
@@ -22,6 +41,13 @@ public class JuegoQuince extends Juego{
 		camino=juego.camino+cam;
 	}
 	
+	/**
+	 * Método que calcula una lista con los posibles candidatos del tablero que cumplen lo que diga 's', que representa el operador que se quiere aplicar. La
+	 * lista se calcula para la carta que ocupa la posición p.
+	 * @param s representación del operador que se quiere aplicar
+	 * @param p posición de la carta para la que se calcula la lista de candidatos
+	 * @return lista con las posiciones de las cartas que cumplirían lo que diga s.
+	 */
 	private Vector<Integer> puedo(String s,int p){
 		Vector<Integer> v=new Vector<Integer>(0,1);
 		int valor=tablero[p];
@@ -50,11 +76,22 @@ public class JuegoQuince extends Juego{
 		return v;
 	}
 	
+	/**
+	 * Operador que quita 2 cartas, dadas por la posición que ocupan
+	 * @param i carta 1
+	 * @param j carta 2
+	 */
 	private void Quita2(int i,int j){
 		tablero[i]=0;
 		tablero[j]=0;
 	}
 	
+	/**
+	 * Operador que quita 3 cartas, dadas por la posición que ocupan
+	 * @param i carta 1
+	 * @param j carta 2
+	 * @param k carta 3
+	 */
 	private void Quita3(int i,int j,int k){
 		tablero[i]=0;
 		tablero[j]=0;
@@ -66,6 +103,7 @@ public class JuegoQuince extends Juego{
 		JuegoQuince estado;
 		Vector<Integer> v=new Vector<Integer>(0,1);
 		int p=0;
+		// buscar la primera carta que aún no se ha quitado del tablero
 		while (tablero[p]==0 && p<tablero.length)
 			p++;
 		v=this.puedo("QI",p);

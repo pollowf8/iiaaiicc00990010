@@ -5,7 +5,7 @@ import java.util.Vector;
 
 /**
  * Juego de las torres de hanoi. Se emplean 3 varillas y 4 discos. Para la representación en string se toma la cima de la pila como el elemento más a la derecha
- * @author Pablo Acevedo
+ * @author Pablo Acevedo, Alberto Díez, Jorge Guirado
  *
  */
 public class Hanoi extends Juego{
@@ -31,7 +31,7 @@ public class Hanoi extends Juego{
 		varillaC=new Stack<Integer>();
 		for (int i=4;i>0;i--)
 			varillaA.push(i);
-		valorHeur=-1;
+		valorHeur=this.Heuristica();
 		coste=0;
 		profundidad=0;
 		camino="";
@@ -115,6 +115,7 @@ public class Hanoi extends Juego{
 	private void AB(){
 		int cima=varillaA.pop();
 		varillaB.push(cima);
+		valorHeur=this.Heuristica();
 	}
 	
 	/**
@@ -123,6 +124,7 @@ public class Hanoi extends Juego{
 	private void AC(){
 		int cima=varillaA.pop();
 		varillaC.push(cima);
+		valorHeur=this.Heuristica();
 	}
 	
 	/**
@@ -131,6 +133,7 @@ public class Hanoi extends Juego{
 	private void BA(){
 		int cima=varillaB.pop();
 		varillaA.push(cima);
+		valorHeur=this.Heuristica();
 	}
 	
 	/**
@@ -139,6 +142,7 @@ public class Hanoi extends Juego{
 	private void BC(){
 		int cima=varillaB.pop();
 		varillaC.push(cima);
+		valorHeur=this.Heuristica();
 	}
 	
 	/**
@@ -147,6 +151,7 @@ public class Hanoi extends Juego{
 	private void CA(){
 		int cima=varillaC.pop();
 		varillaA.push(cima);
+		valorHeur=this.Heuristica();
 	}
 	
 	/**
@@ -155,6 +160,16 @@ public class Hanoi extends Juego{
 	private void CB(){
 		int cima=varillaC.pop();
 		varillaB.push(cima);
+		valorHeur=this.Heuristica();
+	}
+	/**
+	 * Función heurística, calcula el número de discos que están en la varilla inicial y la central
+	 * @return suma de los discos de varillaA y varillaB
+	 */
+	private double Heuristica(){
+		double d=0;
+		d=varillaA.size()+varillaB.size();
+		return d;
 	}
 
 	public Vector<Juego> expandir(){
