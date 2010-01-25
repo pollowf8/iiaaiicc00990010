@@ -2,6 +2,7 @@ package Controlador;
 
 import Modelo.Casino;
 import Swing.Panel;
+import Swing.Swing;
 
 
 public class Controlador {
@@ -34,5 +35,7 @@ public class Controlador {
 	public void añadirObs(Panel panel) {
 		casino.addObserver(panel);		
 	}
+
+
 	
 }

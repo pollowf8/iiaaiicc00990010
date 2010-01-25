@@ -25,6 +25,7 @@ public class Panel extends JPanel implements ObservadorPartida{
 	private ImageIcon fotoCasino, fotoDocs;
 	private JScrollPane scroll;
 	private String desarrollo;
+	private boolean finPartida;
 
 	
 	public Panel(){
@@ -61,6 +62,7 @@ public class Panel extends JPanel implements ObservadorPartida{
 		this.add(cuadroTexto);
 		cuadroTexto.setEnabled(false);		
 		desarrollo="";
+		finPartida=false;
 	}
 
 		
@@ -85,8 +87,20 @@ public class Panel extends JPanel implements ObservadorPartida{
 			desactivarBotonInicio();
 	}
 	
+
+
 	private void desactivarBotonInicio(){
 		inicio.setEnabled(false);
+	}
+
+	public void terminar(){
+		JugarOtraPartida j=new JugarOtraPartida();
+		finPartida=j.getEleccion();
+	}
+
+
+	public boolean fin() {
+		return finPartida;
 	}
 
 
