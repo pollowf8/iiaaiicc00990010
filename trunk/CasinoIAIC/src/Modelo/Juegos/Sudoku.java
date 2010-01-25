@@ -75,7 +75,7 @@ public class Sudoku extends Juego{
 		int p=0;
 		while (tablero[p]!=0 && p<tablero.length)
 			p++;
-		System.out.println("p: "+p);
+		//System.out.println("p: "+p);
 		Vector<Integer> lista=this.lista(p);
 		if (!lista.isEmpty()){
 			for (int i=0;i<lista.size();i++){
