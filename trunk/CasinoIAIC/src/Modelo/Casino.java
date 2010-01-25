@@ -128,23 +128,6 @@ public class Casino {
 	}
 
 	public boolean jugar(){		
-		/*
-		 * Pruebas de escritura en el log
-		 */
-		escribeEstado("fas");
-		escribeEstado("asfasf");
-		escribeEstado("fas");
-		escribeEstado("asfasf");
-		escribeEstado("fas");
-		escribeEstado("asfasf");
-		escribeEstado("fas");
-		escribeEstado("asfasf");
-		txt.escribeFichero("probando");
-		txt.escribeFichero("probando2");
-		txt.escribeFichero("probando3");
-		txt.escribeFichero("probando4");
-		
-		
 		return this.juegaZona(this.zonaInicial);
 	}
 	
@@ -152,9 +135,9 @@ public class Casino {
 		// CASO BASE
 		// La zona es salida
 		Zona actual=this.zonas.get(zona);
-		System.out.println("\n------------------------------------------");
-		System.out.println("ENTRANDO EN ZONA: "+actual.getIndice());
-		System.out.println("------------------------------------------");
+		escribeEstado("\n------------------------------------------");
+		escribeEstado("ENTRANDO EN ZONA: "+actual.getIndice());
+		escribeEstado("------------------------------------------");
 		actual.setVisitada(true);
 		if (actual.isFin()) return true;
 		// CASO RECURSIVO

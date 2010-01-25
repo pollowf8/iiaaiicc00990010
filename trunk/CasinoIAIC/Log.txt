@@ -1,4 +1,109 @@
+fas
+asfasf
+fas
+asfasf
+fas
+asfasf
+fas
+asfasf
 probando
 probando2
 probando3
 probando4
+JUGANDO ZONA: 59
+Juego: Reloj 11 restante: 0 Reloj 7 restante: 0
+
+Búsqueda: Modelo.Busquedas.AEstrella@2a340e
+Resultado: Reloj 11 restante: 0 Reloj 7 restante: 0
+
+BLOQUEADA ZONA 59
+JUGANDO ZONA: 40
+Juego: Misioneros izquierda: 3 Canibales izquierda: 3
+
+Búsqueda: Modelo.Busquedas.EnfriamientoSimulado@bfbdb0
+Resultado: Misioneros izquierda: 3 Canibales izquierda: 3
+
+BLOQUEADA ZONA 40
+JUGANDO ZONA: 22
+Juego: G=0L P=0L
+
+Búsqueda: Modelo.Busquedas.EscaladaSimple@3e86d0
+Resultado: G=0L P=0L
+
+BLOQUEADA ZONA 22
+JUGANDO ZONA: 4
+Juego: [2 8 3][1 6 4][7 0 5]
+
+Búsqueda: Modelo.Busquedas.ProfundidadLimitada@19fcc69
+Resultado: [1 2 3][8 0 4][7 6 5]
+
+ÉXITO
+JUGANDO ZONA: 44
+Juego: Granjero=1 ; Lobo=1 ; Cabra=1 ; Col=1
+
+Búsqueda: Modelo.Busquedas.Voraz@17172ea
+Resultado: Granjero=1 ; Lobo=1 ; Cabra=1 ; Col=1
+
+BLOQUEADA ZONA 44
+JUGANDO ZONA: 30
+Juego: Granjero=1 ; Lobo=1 ; Cabra=1 ; Col=1
+
+Búsqueda: Modelo.Busquedas.EscaladaMaximaPendiente@f38798
+Resultado: Granjero=1 ; Lobo=1 ; Cabra=1 ; Col=1
+
+BLOQUEADA ZONA 30
+JUGANDO ZONA: 16
+Juego: 0 0 2|0 3 1|0 0 8
+0 4 0|0 0 0|0 1 3
+8 1 0|7 0 0|0 0 0
+-----------------
+0 3 0|0 5 0|0 6 2
+4 0 7|3 8 6|9 0 1
+6 5 0|0 2 0|0 8 0
+-----------------
+0 0 0|0 0 5|0 7 9
+2 7 0|0 0 0|0 3 0
+9 0 0|4 7 0|6 0 0
+
+Búsqueda: Modelo.Busquedas.PrimeroAnchura@4b222f
+Resultado: 5 9 2|6 3 1|7 4 8
+7 4 6|5 9 8|2 1 3
+8 1 3|7 4 2|5 9 6
+-----------------
+1 3 8|9 5 7|4 6 2
+4 2 7|3 8 6|9 5 1
+6 5 9|1 2 4|3 8 7
+-----------------
+3 6 4|2 1 5|8 7 9
+2 7 5|8 6 9|1 3 4
+9 8 1|4 7 3|6 2 5
+
+ÉXITO
+JUGANDO ZONA: 52
+Juego: Reloj 11 restante: 0 Reloj 7 restante: 0
+
+Búsqueda: Modelo.Busquedas.ProfundidadLimitada@19fcc69
+Resultado: Reloj 11 restante: 11 Reloj 7 restante: 3
+
+ÉXITO
+JUGANDO ZONA: 70
+Juego: Granjero=1 ; Lobo=1 ; Cabra=1 ; Col=1
+
+Búsqueda: Modelo.Busquedas.PrimeroAnchura@4b222f
+Resultado: Granjero=0 ; Lobo=0 ; Cabra=0 ; Col=0
+
+ÉXITO
+JUGANDO ZONA: 76
+Juego: [2 8 3][1 6 4][7 0 5]
+
+Búsqueda: Modelo.Busquedas.CosteUniforme@7a78d3
+Resultado: [1 2 3][8 0 4][7 6 5]
+
+ÉXITO
+JUGANDO ZONA: 78
+Juego: Misioneros izquierda: 3 Canibales izquierda: 3
+
+Búsqueda: Modelo.Busquedas.ProfundidadLimitada@19fcc69
+Resultado: Misioneros izquierda: 0 Canibales izquierda: 0
+
+ÉXITO
