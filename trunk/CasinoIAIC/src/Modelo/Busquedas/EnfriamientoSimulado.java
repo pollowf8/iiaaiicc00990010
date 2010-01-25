@@ -6,6 +6,10 @@ import Modelo.Juegos.*;
 
 public class EnfriamientoSimulado implements Busqueda{
 
+	public String toString() {
+		return "Enfriamiento simulado";
+	}
+	
 	@Override
 	public Juego resuelve(Juego inicial) {
 		if (inicial.getValorHeur()==-1 || inicial.isGoal())

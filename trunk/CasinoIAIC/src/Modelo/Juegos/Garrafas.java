@@ -196,7 +196,7 @@ public class Garrafas extends Juego{
 	
 	@Override
 	public String toString(){
-		return "G="+gra+"L P="+peq+"L\n";
+		return "Garrafas\nG="+gra+"L P="+peq+"L\n";
 	}
 	
 }

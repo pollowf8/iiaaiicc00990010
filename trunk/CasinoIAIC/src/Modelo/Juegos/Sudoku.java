@@ -107,7 +107,7 @@ public class Sudoku extends Juego{
 	}
 	
 	public String toString(){
-		String s="";
+		String s="Sudoku\n";
 		for (int i=0;i<tablero.length;i+=9){
 			for (int j=0;j<3;j++){
 				s+=tablero[i+3*j]+" "+tablero[i+3*j+1]+" "+tablero[i+3*j+2];

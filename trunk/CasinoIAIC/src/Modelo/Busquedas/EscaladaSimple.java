@@ -8,6 +8,10 @@ import Modelo.Juegos.*;
 
 public class EscaladaSimple implements Busqueda{
 
+	public String toString() {
+		return "Escalada simple";
+	}
+	
 	@Override
 	public Juego resuelve(Juego inicial) {
 		if (inicial.getValorHeur()==-1 || inicial.isGoal())

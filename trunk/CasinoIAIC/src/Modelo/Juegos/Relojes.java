@@ -107,7 +107,7 @@ public class Relojes extends Juego{
 	}
 	
 	public String toString(){
-		return "Reloj 11 restante: "+r11h+" Reloj 7 restante: "+r7h+"\n";
+		return "Relojes\nReloj 11 restante: "+r11h+" Reloj 7 restante: "+r7h+"\n";
 	}
 	
 }

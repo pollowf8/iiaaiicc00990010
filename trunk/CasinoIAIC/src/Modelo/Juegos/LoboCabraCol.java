@@ -200,6 +200,6 @@ public class LoboCabraCol extends Juego{
 	}
 	
 	public String toString(){
-		return "Granjero="+granjero+" ; Lobo="+lobo+" ; Cabra="+cabra+" ; Col="+col+"\n";
+		return "Lobo, cabra, col\nGranjero="+granjero+" ; Lobo="+lobo+" ; Cabra="+cabra+" ; Col="+col+"\n";
 	}
 }

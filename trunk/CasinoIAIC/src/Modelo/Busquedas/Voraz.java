@@ -7,6 +7,10 @@ import Modelo.Juegos.*;
 
 public class Voraz implements Busqueda{
 
+	public String toString() {
+		return "Voraz";
+	}
+	
 	@Override
 	public Juego resuelve(Juego inicial){
 		if (inicial.getValorHeur()==-1)

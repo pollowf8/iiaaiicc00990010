@@ -8,6 +8,10 @@ import Modelo.Juegos.*;
 
 public class EscaladaMaximaPendiente implements Busqueda{
 
+	public String toString() {
+		return "Escalada máxima pendiente";
+	}
+	
 	@Override
 	public Juego resuelve(Juego inicial){
 		if (inicial.getValorHeur()==-1 || inicial.isGoal())

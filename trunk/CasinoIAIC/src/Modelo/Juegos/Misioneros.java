@@ -224,6 +224,6 @@ public class Misioneros extends Juego{
 	}
 	
 	public String toString(){
-		return "Misioneros izquierda: "+NMI+" Canibales izquierda: "+NCI+"\n";
+		return "Misioneros y caníbales\nMisioneros izquierda: "+NMI+" Canibales izquierda: "+NCI+"\n";
 	}
 }

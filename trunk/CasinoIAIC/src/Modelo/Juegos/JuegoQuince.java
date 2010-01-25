@@ -116,7 +116,7 @@ public class JuegoQuince extends Juego{
 	}
 	
 	public String toString(){
-		return "["+tablero[0]+" "+tablero[1]+" "+tablero[2]+" "+tablero[3]+"]\n"+
+		return "Juego quince\n["+tablero[0]+" "+tablero[1]+" "+tablero[2]+" "+tablero[3]+"]\n"+
 				"["+tablero[4]+" "+tablero[5]+" "+tablero[6]+" "+tablero[7]+"]\n"+
 				"["+tablero[8]+" "+tablero[9]+" "+tablero[10]+" "+tablero[11]+"]\n"+
 				"["+tablero[12]+" "+tablero[13]+" "+tablero[14]+" "+tablero[15]+"]\n";

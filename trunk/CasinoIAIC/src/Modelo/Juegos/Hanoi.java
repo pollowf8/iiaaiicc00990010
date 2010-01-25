@@ -213,7 +213,7 @@ public class Hanoi extends Juego{
 	}
 	
 	public String toString(){
-		String aux="Varilla A=[";
+		String aux="Hanoi\nVarilla A=[";
 		for(int i=0;i<varillaA.size();i++)
 			aux+=varillaA.elementAt(i);
 		aux+="] ; Varilla B=[";
