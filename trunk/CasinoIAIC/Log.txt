@@ -1,58 +1,85 @@
-fas
-asfasf
-fas
-asfasf
-fas
-asfasf
-fas
-asfasf
-probando
-probando2
-probando3
-probando4
-JUGANDO ZONA: 59
-Juego: Reloj 11 restante: 0 Reloj 7 restante: 0
 
-Búsqueda: Modelo.Busquedas.AEstrella@2a340e
-Resultado: Reloj 11 restante: 0 Reloj 7 restante: 0
-
-BLOQUEADA ZONA 59
-JUGANDO ZONA: 40
-Juego: Misioneros izquierda: 3 Canibales izquierda: 3
-
-Búsqueda: Modelo.Busquedas.EnfriamientoSimulado@bfbdb0
-Resultado: Misioneros izquierda: 3 Canibales izquierda: 3
-
-BLOQUEADA ZONA 40
-JUGANDO ZONA: 22
+------------------------------------------
+ENTRANDO EN ZONA: 0
+------------------------------------------
+JUGANDO ZONA: 58
 Juego: G=0L P=0L
 
-Búsqueda: Modelo.Busquedas.EscaladaSimple@3e86d0
+Búsqueda: Modelo.Busquedas.EscaladaSimple@bfbdb0
 Resultado: G=0L P=0L
 
-BLOQUEADA ZONA 22
-JUGANDO ZONA: 4
+BLOQUEADA ZONA 58
+
+------------------------------------------
+ENTRANDO EN ZONA: 0
+------------------------------------------
+JUGANDO ZONA: 31
 Juego: [2 8 3][1 6 4][7 0 5]
 
-Búsqueda: Modelo.Busquedas.ProfundidadLimitada@19fcc69
+Búsqueda: Modelo.Busquedas.ProfundidadLimitada@3e86d0
 Resultado: [1 2 3][8 0 4][7 6 5]
 
 ÉXITO
-JUGANDO ZONA: 44
-Juego: Granjero=1 ; Lobo=1 ; Cabra=1 ; Col=1
 
-Búsqueda: Modelo.Busquedas.Voraz@17172ea
-Resultado: Granjero=1 ; Lobo=1 ; Cabra=1 ; Col=1
+------------------------------------------
+ENTRANDO EN ZONA: 31
+------------------------------------------
+JUGANDO ZONA: 50
+Juego: Varilla A=[4321] ; Varilla B=[] ; Varilla C=[]
 
-BLOQUEADA ZONA 44
-JUGANDO ZONA: 30
-Juego: Granjero=1 ; Lobo=1 ; Cabra=1 ; Col=1
+Búsqueda: Modelo.Busquedas.PrimeroAnchura@17172ea
+Resultado: Varilla A=[] ; Varilla B=[] ; Varilla C=[4321]
 
-Búsqueda: Modelo.Busquedas.EscaladaMaximaPendiente@f38798
-Resultado: Granjero=1 ; Lobo=1 ; Cabra=1 ; Col=1
+ÉXITO
 
-BLOQUEADA ZONA 30
-JUGANDO ZONA: 16
+------------------------------------------
+ENTRANDO EN ZONA: 50
+------------------------------------------
+JUGANDO ZONA: 64
+Juego: [2 8 3][1 6 4][7 0 5]
+
+Búsqueda: Modelo.Busquedas.EscaladaSimple@bfbdb0
+Resultado: [2 8 3][1 6 4][7 0 5]
+
+BLOQUEADA ZONA 64
+
+------------------------------------------
+ENTRANDO EN ZONA: 50
+------------------------------------------
+JUGANDO ZONA: 54
+Juego: [2 8 3][1 6 4][7 0 5]
+
+Búsqueda: Modelo.Busquedas.Voraz@929206
+Resultado: [1 2 3][8 0 4][7 6 5]
+
+ÉXITO
+
+------------------------------------------
+ENTRANDO EN ZONA: 54
+------------------------------------------
+JUGANDO ZONA: 72
+Juego: G=0L P=0L
+
+Búsqueda: Modelo.Busquedas.CosteUniforme@e39a3e
+Resultado: G=2L P=0L
+
+ÉXITO
+
+------------------------------------------
+ENTRANDO EN ZONA: 72
+------------------------------------------
+JUGANDO ZONA: 76
+Juego: [2 8 3][1 6 4][7 0 5]
+
+Búsqueda: Modelo.Busquedas.ProfundidadIterativa@92e78c
+Resultado: [1 2 3][8 0 4][7 6 5]
+
+ÉXITO
+
+------------------------------------------
+ENTRANDO EN ZONA: 76
+------------------------------------------
+JUGANDO ZONA: 79
 Juego: 0 0 2|0 3 1|0 0 8
 0 4 0|0 0 0|0 1 3
 8 1 0|7 0 0|0 0 0
@@ -65,7 +92,77 @@ Juego: 0 0 2|0 3 1|0 0 8
 2 7 0|0 0 0|0 3 0
 9 0 0|4 7 0|6 0 0
 
-Búsqueda: Modelo.Busquedas.PrimeroAnchura@4b222f
+Búsqueda: Modelo.Busquedas.ProfundidadLimitada@3e86d0
+Resultado: 7 9 2|6 3 1|5 4 8
+5 4 6|9 0 0|0 1 3
+8 1 0|7 0 0|0 0 0
+-----------------
+0 3 0|0 5 0|0 6 2
+4 0 7|3 8 6|9 0 1
+6 5 0|0 2 0|0 8 0
+-----------------
+0 0 0|0 0 5|0 7 9
+2 7 0|0 0 0|0 3 0
+9 0 0|4 7 0|6 0 0
+
+BLOQUEADA ZONA 79
+
+------------------------------------------
+ENTRANDO EN ZONA: 76
+------------------------------------------
+JUGANDO ZONA: 77
+Juego: Misioneros izquierda: 3 Canibales izquierda: 3
+
+Búsqueda: Modelo.Busquedas.EscaladaMaximaPendiente@1858610
+Resultado: Misioneros izquierda: 3 Canibales izquierda: 3
+
+BLOQUEADA ZONA 77
+
+------------------------------------------
+ENTRANDO EN ZONA: 76
+------------------------------------------
+JUGANDO ZONA: 41
+Juego: [10 10 4 7]
+[6 7 1 10]
+[4 7 6 10]
+[4 6 10 1]
+
+Búsqueda: Modelo.Busquedas.Voraz@929206
+Resultado: [10 10 4 7]
+[6 7 1 10]
+[4 7 6 10]
+[4 6 10 1]
+
+BLOQUEADA ZONA 41
+
+------------------------------------------
+ENTRANDO EN ZONA: 76
+------------------------------------------
+JUGANDO ZONA: 37
+Juego: Varilla A=[4321] ; Varilla B=[] ; Varilla C=[]
+
+Búsqueda: Modelo.Busquedas.EscaladaSimple@bfbdb0
+Resultado: Varilla A=[4321] ; Varilla B=[] ; Varilla C=[]
+
+BLOQUEADA ZONA 37
+
+------------------------------------------
+ENTRANDO EN ZONA: 76
+------------------------------------------
+JUGANDO ZONA: 3
+Juego: 0 0 2|0 3 1|0 0 8
+0 4 0|0 0 0|0 1 3
+8 1 0|7 0 0|0 0 0
+-----------------
+0 3 0|0 5 0|0 6 2
+4 0 7|3 8 6|9 0 1
+6 5 0|0 2 0|0 8 0
+-----------------
+0 0 0|0 0 5|0 7 9
+2 7 0|0 0 0|0 3 0
+9 0 0|4 7 0|6 0 0
+
+Búsqueda: Modelo.Busquedas.CosteUniforme@e39a3e
 Resultado: 5 9 2|6 3 1|7 4 8
 7 4 6|5 9 8|2 1 3
 8 1 3|7 4 2|5 9 6
@@ -79,31 +176,125 @@ Resultado: 5 9 2|6 3 1|7 4 8
 9 8 1|4 7 3|6 2 5
 
 ÉXITO
+
+------------------------------------------
+ENTRANDO EN ZONA: 3
+------------------------------------------
+JUGANDO ZONA: 71
+Juego: 0 0 2|0 3 1|0 0 8
+0 4 0|0 0 0|0 1 3
+8 1 0|7 0 0|0 0 0
+-----------------
+0 3 0|0 5 0|0 6 2
+4 0 7|3 8 6|9 0 1
+6 5 0|0 2 0|0 8 0
+-----------------
+0 0 0|0 0 5|0 7 9
+2 7 0|0 0 0|0 3 0
+9 0 0|4 7 0|6 0 0
+
+Búsqueda: Modelo.Busquedas.ProfundidadIterativa@92e78c
+Resultado: 5 9 2|6 3 1|7 4 8
+7 4 6|5 9 8|2 1 3
+8 1 3|7 4 2|5 9 6
+-----------------
+1 3 8|9 5 7|4 6 2
+4 2 7|3 8 6|9 5 1
+6 5 9|1 2 4|3 8 7
+-----------------
+3 6 4|2 1 5|8 7 9
+2 7 5|8 6 9|1 3 4
+9 8 1|4 7 3|6 2 5
+
+ÉXITO
+
+------------------------------------------
+ENTRANDO EN ZONA: 71
+------------------------------------------
 JUGANDO ZONA: 52
-Juego: Reloj 11 restante: 0 Reloj 7 restante: 0
-
-Búsqueda: Modelo.Busquedas.ProfundidadLimitada@19fcc69
-Resultado: Reloj 11 restante: 11 Reloj 7 restante: 3
-
-ÉXITO
-JUGANDO ZONA: 70
-Juego: Granjero=1 ; Lobo=1 ; Cabra=1 ; Col=1
-
-Búsqueda: Modelo.Busquedas.PrimeroAnchura@4b222f
-Resultado: Granjero=0 ; Lobo=0 ; Cabra=0 ; Col=0
-
-ÉXITO
-JUGANDO ZONA: 76
-Juego: [2 8 3][1 6 4][7 0 5]
-
-Búsqueda: Modelo.Busquedas.CosteUniforme@7a78d3
-Resultado: [1 2 3][8 0 4][7 6 5]
-
-ÉXITO
-JUGANDO ZONA: 78
 Juego: Misioneros izquierda: 3 Canibales izquierda: 3
 
-Búsqueda: Modelo.Busquedas.ProfundidadLimitada@19fcc69
-Resultado: Misioneros izquierda: 0 Canibales izquierda: 0
+Búsqueda: Modelo.Busquedas.AEstrella@26e431
+Resultado: Misioneros izquierda: 3 Canibales izquierda: 3
+
+BLOQUEADA ZONA 52
+
+------------------------------------------
+ENTRANDO EN ZONA: 71
+------------------------------------------
+JUGANDO ZONA: 6
+Juego: Granjero=1 ; Lobo=1 ; Cabra=1 ; Col=1
+
+Búsqueda: Modelo.Busquedas.Voraz@929206
+Resultado: Granjero=1 ; Lobo=1 ; Cabra=1 ; Col=1
+
+BLOQUEADA ZONA 6
+
+------------------------------------------
+ENTRANDO EN ZONA: 71
+------------------------------------------
+HIJOS BLOQUEADOS. Retrocediendo a zona 3
+
+------------------------------------------
+ENTRANDO EN ZONA: 3
+------------------------------------------
+JUGANDO ZONA: 56
+Juego: Varilla A=[4321] ; Varilla B=[] ; Varilla C=[]
+
+Búsqueda: Modelo.Busquedas.CosteUniforme@e39a3e
+Resultado: Varilla A=[] ; Varilla B=[] ; Varilla C=[4321]
 
 ÉXITO
+
+------------------------------------------
+ENTRANDO EN ZONA: 56
+------------------------------------------
+JUGANDO ZONA: 70
+Juego: [10 10 4 7]
+[6 7 1 10]
+[4 7 6 10]
+[4 6 10 1]
+
+Búsqueda: Modelo.Busquedas.PrimeroProfundidad@93dee9
+Resultado: [0 0 0 0]
+[0 0 0 0]
+[0 0 0 0]
+[0 6 0 0]
+
+ÉXITO
+
+------------------------------------------
+ENTRANDO EN ZONA: 70
+------------------------------------------
+JUGANDO ZONA: 78
+Juego: 0 0 2|0 3 1|0 0 8
+0 4 0|0 0 0|0 1 3
+8 1 0|7 0 0|0 0 0
+-----------------
+0 3 0|0 5 0|0 6 2
+4 0 7|3 8 6|9 0 1
+6 5 0|0 2 0|0 8 0
+-----------------
+0 0 0|0 0 5|0 7 9
+2 7 0|0 0 0|0 3 0
+9 0 0|4 7 0|6 0 0
+
+Búsqueda: Modelo.Busquedas.PrimeroAnchura@17172ea
+Resultado: 5 9 2|6 3 1|7 4 8
+7 4 6|5 9 8|2 1 3
+8 1 3|7 4 2|5 9 6
+-----------------
+1 3 8|9 5 7|4 6 2
+4 2 7|3 8 6|9 5 1
+6 5 9|1 2 4|3 8 7
+-----------------
+3 6 4|2 1 5|8 7 9
+2 7 5|8 6 9|1 3 4
+9 8 1|4 7 3|6 2 5
+
+ÉXITO
+
+------------------------------------------
+ENTRANDO EN ZONA: 78
+------------------------------------------
+Hay salida: true
