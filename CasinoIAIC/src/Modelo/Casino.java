@@ -127,8 +127,10 @@ public class Casino {
 		}
 	}
 
-	public boolean jugar(){		
-		return this.juegaZona(this.zonaInicial);
+	public boolean jugar(){	
+		boolean fin=this.juegaZona(this.zonaInicial);
+		escribeEstado("Hay salida: "+fin);
+		return fin;
 	}
 	
 	private boolean juegaZona(int zona) {
