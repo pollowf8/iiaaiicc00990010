@@ -6,7 +6,7 @@ import java.util.Vector;
  * Juego del lobo, la cabra y la col. Un granjero ha comprado un lobo, una cabra y una col. Para volver a casa tiene que cruzar un río, para lo cual dispone de una
  * barca. La barca sólo tiene capacidad para él mismo y una de sus compras. Si el lobo se queda sin vigilancia, se come a la cabra. Si la cabra queda sin vigilancia,
  * se come la col.
- * @author Pablo Acevedo
+ * @author Pablo Acevedo, Alberto Díez, Jorge Guirado
  *
  */
 public class LoboCabraCol extends Juego{
@@ -52,6 +52,7 @@ public class LoboCabraCol extends Juego{
 		lobo=l.lobo;
 		cabra=l.cabra;
 		col=l.col;
+		valorHeur=l.valorHeur;
 		coste=l.coste+cos;
 		profundidad=l.profundidad+1;
 		camino=l.camino+cam;

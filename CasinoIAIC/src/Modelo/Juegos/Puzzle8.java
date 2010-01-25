@@ -1,11 +1,11 @@
 package Modelo.Juegos;
-/* FALTA LA HEURISTICA */
+
 import java.util.Vector;
 
 /**
  * Juego del puzzle de 8. Se dispone de un tablero de 3*3 huecos, y tenemos 8 fichas, de forma que hay un hueco libre sobre el que se puede deslizar una
  * ficha cada vez. 
- * @author Pablo Acevedo
+ * @author Pablo Acevedo, Alberto Díez, Jorge Guirado
  *
  */
 public class Puzzle8 extends Juego{
@@ -166,8 +166,7 @@ public class Puzzle8 extends Juego{
 	}
 
 	/**
-	 * Función heurística. Sigue el método Manhattan, devuelve la suma de las distancias de las posiciones actuales a las del objetivo. Además se ha mejorado
-	 * con la suma de otra heurística, el número de fichas descolocadas.
+	 * Función heurística. Sigue el método Manhattan, devuelve la suma de las distancias de las posiciones actuales a las del objetivo.
 	 * @param goal estado objetivo
 	 * @return suma de distancias. Cuanto más pequeño sea el número, más cerca se está del objetivo.
 	 */
@@ -176,7 +175,6 @@ public class Puzzle8 extends Juego{
 		for (int i=0;i<tablero.length;i++) {
 			int valor=tablero[i];
 			int pos=0;
-			
 			for (int j=0;j<goal.length;j++)
 				if (goal[j]==valor)
 					pos=j;
@@ -220,12 +218,6 @@ public class Puzzle8 extends Juego{
 				tablero[6]==7 && tablero[7]==6 && tablero[8]==5);
 	}
 	
-	public String toString(){
-		return "Puzzle 8\n["+tablero[0]+" "+tablero[1]+" "+tablero[2]+"]["
-				+tablero[3]+" "+tablero[4]+" "+tablero[5]+"]["
-				+tablero[6]+" "+tablero[7]+" "+tablero[8]+"]\n";	
-	}
-	
 	public boolean equals(Object o){
 		if (this==o)
 			return true;
@@ -237,4 +229,11 @@ public class Puzzle8 extends Juego{
 				return false;
 		return true;
 	}
+	
+	public String toString(){
+		return "Puzzle 8\n["+tablero[0]+" "+tablero[1]+" "+tablero[2]+"]["
+				+tablero[3]+" "+tablero[4]+" "+tablero[5]+"]["
+				+tablero[6]+" "+tablero[7]+" "+tablero[8]+"]\n";	
+	}
+	
 }

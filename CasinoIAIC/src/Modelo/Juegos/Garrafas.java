@@ -1,10 +1,10 @@
 package Modelo.Juegos;
-/* FALTA LA HEURISTICA */
+
 import java.util.Vector;
 
 /**
  * Juego de las garrafas. Tenemos 2 garrafas, una de 4L y otra de 3L. El juego consiste en obtener 2L en la garrafa grande y 0L en la pequeña.
- * @author Pablo Acevedo
+ * @author Pablo Acevedo, Alberto Díez, Jorge Guirado
  *
  */
 public class Garrafas extends Juego{
@@ -18,12 +18,12 @@ public class Garrafas extends Juego{
 	private int peq;
 	
 	/**
-	 * Constructora de estado inicial. Pone todo a 0.
+	 * Constructora de estado inicial.
 	 */
 	public Garrafas(){
 		gra=0;
 		peq=0;
-		valorHeur=-1;
+		valorHeur=this.Heuristica();
 		coste=0;
 		profundidad=0;
 		camino="";
@@ -40,7 +40,6 @@ public class Garrafas extends Juego{
 	private Garrafas(Garrafas g,int cos,String cam){
 		gra=g.gra;
 		peq=g.peq;
-		valorHeur=g.valorHeur;
 		coste=g.coste+cos;
 		profundidad=g.profundidad+1;
 		camino=g.camino+cam;
@@ -91,6 +90,7 @@ public class Garrafas extends Juego{
 	 */
 	private void llenaG(){
 		gra=4;
+		valorHeur=this.Heuristica();
 	}
 	
 	/**
@@ -98,6 +98,7 @@ public class Garrafas extends Juego{
 	 */
 	private void llenaP(){
 		peq=3;
+		valorHeur=this.Heuristica();
 	}
 	
 	/**
@@ -105,6 +106,7 @@ public class Garrafas extends Juego{
 	 */
 	private void vaciaG(){
 		gra=0;
+		valorHeur=this.Heuristica();
 	}
 	
 	/**
@@ -112,6 +114,7 @@ public class Garrafas extends Juego{
 	 */
 	private void vaciaP(){
 		peq=0;
+		valorHeur=this.Heuristica();
 	}
 	
 	/**
@@ -127,6 +130,7 @@ public class Garrafas extends Juego{
 			peq=0;
 			gra+=peq;
 		}
+		valorHeur=this.Heuristica();
 	}
 	
 	/**
@@ -142,6 +146,17 @@ public class Garrafas extends Juego{
 			peq+=gra;
 			gra=0;
 		}
+		valorHeur=this.Heuristica();
+	}
+	
+	/**
+	 * Función heurística.
+	 * @return valor absoluto de la suma de la garrafa pequeña, y la garrafa grande -2L
+	 */
+	private double Heuristica(){
+		double d=0;
+		d=Math.abs((gra-2)+peq);
+		return d;
 	}
 	
 	public Vector<Juego> expandir(){

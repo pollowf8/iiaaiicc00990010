@@ -2,9 +2,21 @@ package Modelo.Juegos;
 
 import java.util.Vector;
 
+/**
+ * Juego del sudoku. En cada posición sólo puede haber un único número del 1 al 9, que no se repetirá ni en la fila, ni en la columna, ni en el cuadrado 3x3 que se 
+ * encuentre.
+ * @author Pablo Acevedo, Alberto Díez, Jorge Guirado
+ *
+ */
 public class Sudoku extends Juego{
+	/**
+	 * El estado se representa con un array de 81 posiciones, si hay un 0 corresponde a un hueco
+	 */
 	private int[] tablero;
 	
+	/**
+	 * Constructora de estado inicial
+	 */
 	public Sudoku(){
 		tablero=new int[]  {0,0,2,0,3,1,0,0,8,
 							0,4,0,0,0,0,0,1,3,
@@ -15,12 +27,18 @@ public class Sudoku extends Juego{
 							0,0,0,0,0,5,0,7,9,
 							2,7,0,0,0,0,0,3,0,
 							9,0,0,4,7,0,6,0,0};
-		valorHeur=-1;
+		valorHeur=this.Heuristica();
 		coste=0;
 		profundidad=0;
 		camino="";
 	}
 	
+	/**
+	 * Constructora de sucesor
+	 * @param juego estado padre
+	 * @param cos coste acumulado
+	 * @param cam camino hasta el estado
+	 */
 	private Sudoku(Sudoku juego,int cos,String cam){
 		tablero=new int[81];
 		for (int i=0;i<tablero.length;i++)
@@ -30,6 +48,11 @@ public class Sudoku extends Juego{
 		camino=juego.camino+cam;
 	}
 	
+	/**
+	 * Método que devuelve una lista con los posibles valores para el hueco p
+	 * @param p posición para el que se calculan los posibles valores
+	 * @return lista de candidatos en el hueco p
+	 */
 	private Vector<Integer> lista(int p){
 		Vector<Integer> v=new Vector<Integer>(0,1);
 		for (int i=0;i<9;i++){
@@ -41,6 +64,11 @@ public class Sudoku extends Juego{
 		return v;
 	}
 	
+	/**
+	 * Método que comprueba si el valor que ocupa la posición p está repetido en su fila, columna o cuadrado 3x3
+	 * @param p posición para la que se hace la comprobación
+	 * @return true si no hay ninguna coincidencia, false si hay alguna.
+	 */
 	private boolean test(int p){
 		int v=tablero[p];
 		int fila=p/9;
@@ -65,8 +93,26 @@ public class Sudoku extends Juego{
 		return true;
 	}
 	
+	/**
+	 * Operador que cambia el valor de la posicion p por i
+	 * @param p posición que va a cambiar su valor
+	 * @param i valor nuevo
+	 */
 	private void ponValor(int p,int i){
 		tablero[p]=i;
+		valorHeur=this.Heuristica();
+	}
+	
+	/**
+	 * Función heurística, devuelve el número de huecos sin rellenar.
+	 * @return número de huecos vacíos
+	 */
+	private double Heuristica(){
+		double d=0;
+		for (int i=0;i<tablero.length;i++)
+			if (tablero[i]==0)
+				d+=1;
+		return d;
 	}
 	
 	public Vector<Juego> expandir(){
@@ -75,7 +121,6 @@ public class Sudoku extends Juego{
 		int p=0;
 		while (tablero[p]!=0 && p<tablero.length)
 			p++;
-		//System.out.println("p: "+p);
 		Vector<Integer> lista=this.lista(p);
 		if (!lista.isEmpty()){
 			for (int i=0;i<lista.size();i++){
