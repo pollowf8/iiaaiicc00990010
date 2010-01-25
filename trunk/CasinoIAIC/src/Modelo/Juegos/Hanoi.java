@@ -5,7 +5,7 @@ import java.util.Vector;
 
 /**
  * Juego de las torres de hanoi. Se emplean 3 varillas y 4 discos. Para la representación en string se toma la cima de la pila como el elemento más a la derecha
- * @author Pablo Acevedo, Alberto Díez, Jorge Guirado
+ * @author Pablo Acevedo, Alfredo Díez, Jorge Guirado
  *
  */
 public class Hanoi extends Juego{

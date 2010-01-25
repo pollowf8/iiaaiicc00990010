@@ -4,7 +4,7 @@ import java.util.Vector;
 
 /**
  * Juego de las 8 reinas. Se trata de colocar 8 reinas en un tablero de 8x8, sin que una reina amenace a cualquiera de las demás.
- * @author Pablo Acevedo
+ * @author Pablo Acevedo, Alfredo Díez, Jorge Guirado
  *
  */
 public class Reinas extends Juego{
