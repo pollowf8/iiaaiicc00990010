@@ -159,7 +159,7 @@ public class Casino{
 		actual.setVisitada(true);
 		if (actual.isFin()){
 			escribeEstado("\n*****************************************");
-			escribeEstado("*** DÍAS DE VIDA GANADOS: "+this.vidas+ " *****");
+			escribeEstado("*** DÍAS DE VIDA ACUMULADOS: "+this.vidas+ " *****");
 			escribeEstado("******************************************");
 			return true;
 		}
@@ -202,7 +202,7 @@ public class Casino{
 				this.pila.push(actual);
 				escribeEstado("ÉXITO");
 				this.vidas+=sol.getNodos();
-				escribeEstado("*** DÍAS DE VIDA GANADOS: "+this.vidas+ " *****");
+				escribeEstado("*** DÍAS DE VIDA GANADOS: "+sol.getNodos()+ " *****");
 				return this.juegaZona(siguiente.getIndice());
 			} else {
 			// CASO RECURSIVO 2B: No encuentra solución. Marcamos como visitada y jugamos de nuevo la actual.
