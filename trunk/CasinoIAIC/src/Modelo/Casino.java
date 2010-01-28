@@ -7,7 +7,6 @@ import java.util.Stack;
 
 import Modelo.Busquedas.*;
 import Modelo.Juegos.*;
-import Swing.Swing;
 
 /**
  * @author jga
@@ -49,7 +48,7 @@ public class Casino{
 	private final int MAXSalidas=3;
 	
 	public Casino(){
-		this.vidas=29000;
+		this.vidas=0;
 		this.initJuegos();
 		this.initBusquedas();
 		this.initZonas();
@@ -158,7 +157,12 @@ public class Casino{
 		escribeEstado("ENTRANDO EN ZONA: "+actual.getIndice());
 		escribeEstado("------------------------------------------");
 		actual.setVisitada(true);
-		if (actual.isFin()) return true;
+		if (actual.isFin()){
+			escribeEstado("\n*****************************************");
+			escribeEstado("*** DÍAS DE VIDA GANADOS: "+this.vidas+ " *****");
+			escribeEstado("******************************************");
+			return true;
+		}
 		// CASO RECURSIVO
 		else {
 			// Elegimos el hijo con mayor índice y que no ha sido visitado aún
@@ -197,6 +201,8 @@ public class Casino{
 			if (sol.isGoal()) {
 				this.pila.push(actual);
 				escribeEstado("ÉXITO");
+				this.vidas+=sol.getNodos();
+				escribeEstado("*** DÍAS DE VIDA GANADOS: "+this.vidas+ " *****");
 				return this.juegaZona(siguiente.getIndice());
 			} else {
 			// CASO RECURSIVO 2B: No encuentra solución. Marcamos como visitada y jugamos de nuevo la actual.
