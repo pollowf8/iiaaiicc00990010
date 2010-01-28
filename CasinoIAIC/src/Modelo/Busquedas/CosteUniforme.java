@@ -21,7 +21,7 @@ public class CosteUniforme implements Busqueda{
 		colaAbiertos.offer(inicial);
 		Juego juego=null;
 		try{
-			while(!fin){
+			while(!fin && !colaAbiertos.isEmpty()){
 				juego=colaAbiertos.poll();
 				if (juego.isGoal()){
 					// Si el juego es igual que el estado final, se guarda en su camino toda la información de la búsqueda para mostrarla después
@@ -29,6 +29,7 @@ public class CosteUniforme implements Busqueda{
 					String camino=juego.getCamino()+"Nodos generados:"+generados+" ; Nodos expandidos:"+expandidos+" ; Coste: "+juego.getCoste()+
 									" ; Profundidad:"+juego.getProfundidad();
 					juego.setCamino(camino);
+					juego.setNodos(expandidos);
 				}
 				else{
 					// como no es estado final, se cierra, ya no se va a mirar más
@@ -54,12 +55,12 @@ public class CosteUniforme implements Busqueda{
 	}
 	
 	public static void main(String[] args){
-		Juego inicial=new Garrafas();
+		Juego inicial=new Reinas();
 		CosteUniforme busqueda=new CosteUniforme();
-		System.out.print("Búsqueda coste uniforme:\nEstado inicial: "+inicial.toString());
-		Juego solucion=(Garrafas)busqueda.resuelve(inicial);
+		System.out.print("Búsqueda coste uniforme:\nEstado inicial:\n"+inicial.toString());
+		Juego solucion=(Reinas)busqueda.resuelve(inicial);
 		System.out.print(solucion.getCamino());
-		System.out.print("\nSolución: "+solucion.toString());
+		System.out.print("\nSolución:\n"+solucion.toString());
 	}
 	
 }

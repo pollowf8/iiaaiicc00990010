@@ -30,6 +30,7 @@ public class Voraz implements Busqueda{
 					String camino=juego.getCamino()+"Nodos generados:"+generados+" ; Nodos expandidos:"+expandidos+" ; Coste: "+juego.getCoste()+
 									" ; Profundidad:"+juego.getProfundidad();
 					juego.setCamino(camino);
+					juego.setNodos(expandidos);
 				}
 				else{
 					// como no es estado final, se cierra, ya no se va a mirar más
@@ -55,9 +56,9 @@ public class Voraz implements Busqueda{
 	}
 	
 	public static void main(String[] args){
-		Puzzle8 puzzle=new Puzzle8();
+		Juego puzzle=new Puzzle8();
 		Voraz busqueda=new Voraz();
-		Puzzle8 solucion=(Puzzle8)busqueda.resuelve(puzzle);
+		Juego solucion=(Puzzle8)busqueda.resuelve(puzzle);
 		System.out.print(solucion.getCamino());
 		System.out.print("\nSolución: "+solucion.toString());
 	}
