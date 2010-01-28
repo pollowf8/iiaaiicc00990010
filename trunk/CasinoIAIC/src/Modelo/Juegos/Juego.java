@@ -25,7 +25,10 @@ public abstract class Juego{
 	 * operadores que se han aplicado desde el estado inicial
 	 */
 	protected String camino;	
-	
+	/**
+	 * número de nodos que se expandieron para llegar al estado objetivo
+	 */
+	protected int nodos;
 	/****************************************************************************/
 	
 	/**
@@ -61,6 +64,21 @@ public abstract class Juego{
 	 */
 	public void setCamino(String s){
 		camino=s;
+	}
+	
+	/**
+	 * Set de nodos expandidos
+	 * @param n número de nodos que se expandieron
+	 */
+	public void setNodos(int n){
+		nodos=n;
+	}
+	
+	/**
+	 * @return número de nodos que se expandieron
+	 */
+	public int getNodos(){
+		return nodos;
 	}
 	
 	/**
