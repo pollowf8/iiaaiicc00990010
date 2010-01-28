@@ -36,6 +36,7 @@ public class PrimeroAnchura implements Busqueda{
 					String camino=juego.getCamino()+"Nodos generados:"+generados+" ; Nodos expandidos:"+expandidos+" ; Coste: "+juego.getCoste()+
 									" ; Profundidad:"+juego.getProfundidad();
 					juego.setCamino(camino);
+					juego.setNodos(expandidos);
 				}
 				else{
 					// como no es estado final, se cierra, ya no se va a mirar más
@@ -65,10 +66,10 @@ public class PrimeroAnchura implements Busqueda{
 	 * @param args, no se usa
 	 */
 	public static void main(String[] args){
-		Garrafas inicial=new Garrafas();
+		Juego inicial=new Mono();
 		PrimeroAnchura busqueda=new PrimeroAnchura();
 		System.out.print("Búsqueda en anchura Garrafas:\nEstado inicial: "+inicial.toString());
-		Juego solucion=(Garrafas)busqueda.resuelve(inicial);
+		Juego solucion=(Mono)busqueda.resuelve(inicial);
 		System.out.print(solucion.getCamino());
 		System.out.println("\nSolución: "+solucion.toString());
 	}

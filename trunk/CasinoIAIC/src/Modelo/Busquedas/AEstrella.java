@@ -24,13 +24,14 @@ public class AEstrella implements Busqueda{
 		colaAbiertos.offer(inicial);
 		Juego juego=null;
 		try{
-			while (!fin){
+			while (!fin && !colaAbiertos.isEmpty()){
 				juego=colaAbiertos.poll();
 				if (juego.isGoal()){
 					fin=true;
 					String camino=juego.getCamino()+"Nodos generados:"+generados+" ; Nodos expandidos:"+expandidos+" ; Coste: "+juego.getCoste()+
 									" ; Profundidad:"+juego.getProfundidad();
 					juego.setCamino(camino);
+					juego.setNodos(expandidos);
 				}
 				else{
 					// como no es estado final, se cierra, ya no se va a mirar más
@@ -56,9 +57,10 @@ public class AEstrella implements Busqueda{
 	}
 	
 	public static void main(String[] args){
-		Puzzle8 inicial=new Puzzle8();
+		Juego inicial=new Mono();
 		AEstrella busqueda=new AEstrella();
-		Puzzle8 solucion=(Puzzle8)busqueda.resuelve(inicial);
+		Juego solucion=(Mono)busqueda.resuelve(inicial);
+		System.out.println(inicial.toString());
 		System.out.println(solucion.getCamino());
 		System.out.println(solucion.toString());
 	}

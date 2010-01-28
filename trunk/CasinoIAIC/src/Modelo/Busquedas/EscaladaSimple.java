@@ -30,6 +30,7 @@ public class EscaladaSimple implements Busqueda{
 				String camino=juego.getCamino()+"Nodos generados:"+generados+" ; Nodos expandidos:"+expandidos+" ; Coste: "+juego.getCoste()+
 								" ; Profundidad:"+juego.getProfundidad();
 				juego.setCamino(camino);
+				juego.setNodos(expandidos);
 			}
 			else{
 				listaCerrados.add(juego);

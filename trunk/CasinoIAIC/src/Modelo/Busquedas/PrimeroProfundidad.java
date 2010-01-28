@@ -37,6 +37,7 @@ public class PrimeroProfundidad implements Busqueda{
 					String camino=juego.getCamino()+"Nodos generados:"+generados+" ; Nodos expandidos:"+expandidos+" ; Coste: "+juego.getCoste()+
 								" ; Profundidad:"+juego.getProfundidad();
 					juego.setCamino(camino);
+					juego.setNodos(expandidos);
 				}
 				else{
 					// como no es estado final, se cierra, ya no se va a mirar más

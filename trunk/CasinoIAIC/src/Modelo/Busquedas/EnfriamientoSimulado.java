@@ -32,6 +32,7 @@ public class EnfriamientoSimulado implements Busqueda{
 				String camino=nuevoEstado.getCamino()+"Nodos generados:"+generados+" ; Nodos expandidos:"+expandidos+" ; Coste: "+nuevoEstado.getCoste()+
 				" ; Profundidad:"+nuevoEstado.getProfundidad();
 				nuevoEstado.setCamino(camino);
+				nuevoEstado.setNodos(expandidos);
 				return nuevoEstado;
 			}
 			else{

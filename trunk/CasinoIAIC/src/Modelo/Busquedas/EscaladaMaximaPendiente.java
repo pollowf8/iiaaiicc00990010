@@ -31,6 +31,7 @@ public class EscaladaMaximaPendiente implements Busqueda{
 				String camino=juego.getCamino()+"Nodos generados:"+generados+" ; Nodos expandidos:"+expandidos+" ; Coste: "+juego.getCoste()+
 								" ; Profundidad:"+juego.getProfundidad();
 				juego.setCamino(camino);
+				juego.setNodos(expandidos);
 			}
 			else{
 				// como no es estado final, se cierra, ya no se va a mirar más
@@ -61,9 +62,9 @@ public class EscaladaMaximaPendiente implements Busqueda{
 	}
 	
 	public static void main(String[] args){
-		Juego inicial=new Puzzle8();
+		Juego inicial=new Mono();
 		EscaladaMaximaPendiente busqueda=new EscaladaMaximaPendiente();
-		Juego solucion=(Puzzle8)busqueda.resuelve(inicial);
+		Juego solucion=(Mono)busqueda.resuelve(inicial);
 		System.out.println("Búsqueda por escalada en máxima pendiente, Puzzle8\n");
 		if (solucion.isGoal()){
 			System.out.println(solucion.getCamino());
