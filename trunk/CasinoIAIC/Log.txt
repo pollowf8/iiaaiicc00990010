@@ -2,58 +2,65 @@
 ------------------------------------------
 ENTRANDO EN ZONA: 0
 ------------------------------------------
-JUGANDO ZONA: 92
-Juego: Juego quince
-[10 10 4 7]
-[6 7 1 10]
-[4 7 6 10]
-[4 6 10 1]
+JUGANDO ZONA: 115
+Juego: Garrafas
+G=0L P=0L
 
-Búsqueda: Escalada simple
-Resultado: Juego quince
-[10 10 4 7]
-[6 7 1 10]
-[4 7 6 10]
-[4 6 10 1]
-
-BLOQUEADA ZONA 92
-
-------------------------------------------
-ENTRANDO EN ZONA: 0
-------------------------------------------
-JUGANDO ZONA: 73
-Juego: Lobo, cabra, col
-Granjero=1 ; Lobo=1 ; Cabra=1 ; Col=1
-
-Búsqueda: AEstrella
-Resultado: Lobo, cabra, col
-Granjero=1 ; Lobo=1 ; Cabra=1 ; Col=1
-
-BLOQUEADA ZONA 73
-
-------------------------------------------
-ENTRANDO EN ZONA: 0
-------------------------------------------
-JUGANDO ZONA: 65
-Juego: Misioneros y caníbales
-Misioneros izquierda: 3 Canibales izquierda: 3
-
-Búsqueda: Primero en profundidad
-Resultado: Misioneros y caníbales
-Misioneros izquierda: 0 Canibales izquierda: 0
+Búsqueda: Primero en anchura
+Resultado: Garrafas
+G=2L P=0L
 
 ÉXITO
 
 ------------------------------------------
-ENTRANDO EN ZONA: 65
+ENTRANDO EN ZONA: 115
 ------------------------------------------
-JUGANDO ZONA: 93
+JUGANDO ZONA: 117
+Juego: Puzzle 8
+[2 8 3][1 6 4][7 0 5]
+
+Búsqueda: Escalada máxima pendiente
+Resultado: Puzzle 8
+[2 8 3][1 6 4][7 0 5]
+
+BLOQUEADA ZONA 117
+
+------------------------------------------
+ENTRANDO EN ZONA: 115
+------------------------------------------
+JUGANDO ZONA: 116
+Juego: Lobo, cabra, col
+Granjero=1 ; Lobo=1 ; Cabra=1 ; Col=1
+
+Búsqueda: Escalada máxima pendiente
+Resultado: Lobo, cabra, col
+Granjero=1 ; Lobo=1 ; Cabra=1 ; Col=1
+
+BLOQUEADA ZONA 116
+
+------------------------------------------
+ENTRANDO EN ZONA: 115
+------------------------------------------
+JUGANDO ZONA: 96
+Juego: Lobo, cabra, col
+Granjero=1 ; Lobo=1 ; Cabra=1 ; Col=1
+
+Búsqueda: Profundidad iterativa
+Resultado: Lobo, cabra, col
+Granjero=0 ; Lobo=0 ; Cabra=0 ; Col=0
+
+ÉXITO
+
+------------------------------------------
+ENTRANDO EN ZONA: 96
+------------------------------------------
+JUGANDO ZONA: 100
 Juego: Colores
 [ 1  1  1 ]
 [ 2  1  1 ]
 [ 2  2  2 ]
 
-Búsqueda: Primero en profundidad
+Búsqueda: Profundidad limitada
 Resultado: Colores
 [ 2  1  2 ]
 [ 1  2  1 ]
@@ -62,28 +69,67 @@ Resultado: Colores
 ÉXITO
 
 ------------------------------------------
-ENTRANDO EN ZONA: 93
+ENTRANDO EN ZONA: 100
 ------------------------------------------
-JUGANDO ZONA: 96
+JUGANDO ZONA: 106
+Juego: Fichas
+[ 1 1 1 0 2 2 2 ]
+
+Búsqueda: AEstrella
+Resultado: Fichas
+[ 2 2 2 1 1 0 1 ]
+
+ÉXITO
+
+------------------------------------------
+ENTRANDO EN ZONA: 106
+------------------------------------------
+JUGANDO ZONA: 114
+Juego: Lobo, cabra, col
+Granjero=1 ; Lobo=1 ; Cabra=1 ; Col=1
+
+Búsqueda: Primero en profundidad
+Resultado: Lobo, cabra, col
+Granjero=0 ; Lobo=0 ; Cabra=0 ; Col=0
+
+ÉXITO
+
+------------------------------------------
+ENTRANDO EN ZONA: 114
+------------------------------------------
+JUGANDO ZONA: 50
 Juego: Juego quince
 [10 10 4 7]
 [6 7 1 10]
 [4 7 6 10]
 [4 6 10 1]
 
-Búsqueda: Coste uniforme
+Búsqueda: AEstrella
 Resultado: Juego quince
-[0 0 0 0]
-[0 0 0 0]
-[0 0 6 0]
-[0 0 0 0]
+[10 10 4 7]
+[6 7 1 10]
+[4 7 6 10]
+[4 6 10 1]
+
+BLOQUEADA ZONA 50
+
+------------------------------------------
+ENTRANDO EN ZONA: 114
+------------------------------------------
+JUGANDO ZONA: 22
+Juego: 8 Reinas
+[ -1 -1 -1 -1 -1 -1 -1 -1 ]
+
+Búsqueda: Profundidad limitada
+Resultado: 8 Reinas
+[ 0 4 7 5 2 6 1 3 ]
 
 ÉXITO
 
 ------------------------------------------
-ENTRANDO EN ZONA: 96
+ENTRANDO EN ZONA: 22
 ------------------------------------------
-JUGANDO ZONA: 99
+JUGANDO ZONA: 108
 Juego: Sudoku
 0 0 2|0 3 1|0 0 8
 0 4 0|0 0 0|0 1 3
@@ -111,22 +157,441 @@ Resultado: Sudoku
 2 7 0|0 0 0|0 3 0
 9 0 0|4 7 0|6 0 0
 
-BLOQUEADA ZONA 99
+BLOQUEADA ZONA 108
 
 ------------------------------------------
-ENTRANDO EN ZONA: 96
+ENTRANDO EN ZONA: 22
 ------------------------------------------
-JUGANDO ZONA: 97
+JUGANDO ZONA: 44
+Juego: Sudoku
+0 0 2|0 3 1|0 0 8
+0 4 0|0 0 0|0 1 3
+8 1 0|7 0 0|0 0 0
+-----------------
+0 3 0|0 5 0|0 6 2
+4 0 7|3 8 6|9 0 1
+6 5 0|0 2 0|0 8 0
+-----------------
+0 0 0|0 0 5|0 7 9
+2 7 0|0 0 0|0 3 0
+9 0 0|4 7 0|6 0 0
+
+Búsqueda: Primero en anchura
+Resultado: Sudoku
+5 9 2|6 3 1|7 4 8
+7 4 6|5 9 8|2 1 3
+8 1 3|7 4 2|5 9 6
+-----------------
+1 3 8|9 5 7|4 6 2
+4 2 7|3 8 6|9 5 1
+6 5 9|1 2 4|3 8 7
+-----------------
+3 6 4|2 1 5|8 7 9
+2 7 5|8 6 9|1 3 4
+9 8 1|4 7 3|6 2 5
+
+ÉXITO
+
+------------------------------------------
+ENTRANDO EN ZONA: 44
+------------------------------------------
+JUGANDO ZONA: 81
+Juego: Fichas
+[ 1 1 1 0 2 2 2 ]
+
+Búsqueda: Voraz
+Resultado: Fichas
+[ 2 2 0 2 1 1 1 ]
+
+ÉXITO
+
+------------------------------------------
+ENTRANDO EN ZONA: 81
+------------------------------------------
+JUGANDO ZONA: 113
+Juego: Misioneros y caníbales
+Misioneros izquierda: 3 Canibales izquierda: 3
+
+Búsqueda: Profundidad limitada
+Resultado: Misioneros y caníbales
+Misioneros izquierda: 0 Canibales izquierda: 0
+
+ÉXITO
+
+------------------------------------------
+ENTRANDO EN ZONA: 113
+------------------------------------------
+JUGANDO ZONA: 118
+Juego: Misioneros y caníbales
+Misioneros izquierda: 3 Canibales izquierda: 3
+
+Búsqueda: Escalada simple
+Resultado: Misioneros y caníbales
+Misioneros izquierda: 3 Canibales izquierda: 3
+
+BLOQUEADA ZONA 118
+
+------------------------------------------
+ENTRANDO EN ZONA: 113
+------------------------------------------
+JUGANDO ZONA: 76
+Juego: Relojes
+Reloj 11 restante: 0 Reloj 7 restante: 0
+
+Búsqueda: Profundidad limitada
+Resultado: Relojes
+Reloj 11 restante: 11 Reloj 7 restante: 3
+
+ÉXITO
+
+------------------------------------------
+ENTRANDO EN ZONA: 76
+------------------------------------------
+JUGANDO ZONA: 109
+Juego: Hanoi
+Varilla A=[4321] ; Varilla B=[] ; Varilla C=[]
+
+Búsqueda: Primero en profundidad
+Resultado: Hanoi
+Varilla A=[] ; Varilla B=[] ; Varilla C=[4321]
+
+ÉXITO
+
+------------------------------------------
+ENTRANDO EN ZONA: 109
+------------------------------------------
+JUGANDO ZONA: 110
+Juego: Fichas
+[ 1 1 1 0 2 2 2 ]
+
+Búsqueda: Escalada máxima pendiente
+Resultado: Fichas
+[ 1 1 1 0 2 2 2 ]
+
+BLOQUEADA ZONA 110
+
+------------------------------------------
+ENTRANDO EN ZONA: 109
+------------------------------------------
+JUGANDO ZONA: 83
 Juego: Garrafas
 G=0L P=0L
 
+Búsqueda: Escalada simple
+Resultado: Garrafas
+G=0L P=3L
+
+BLOQUEADA ZONA 83
+
+------------------------------------------
+ENTRANDO EN ZONA: 109
+------------------------------------------
+JUGANDO ZONA: 69
+Juego: Sudoku
+0 0 2|0 3 1|0 0 8
+0 4 0|0 0 0|0 1 3
+8 1 0|7 0 0|0 0 0
+-----------------
+0 3 0|0 5 0|0 6 2
+4 0 7|3 8 6|9 0 1
+6 5 0|0 2 0|0 8 0
+-----------------
+0 0 0|0 0 5|0 7 9
+2 7 0|0 0 0|0 3 0
+9 0 0|4 7 0|6 0 0
+
+Búsqueda: Primero en profundidad
+Resultado: Sudoku
+5 9 2|6 3 1|7 4 8
+7 4 6|5 9 8|2 1 3
+8 1 3|7 4 2|5 9 6
+-----------------
+1 3 8|9 5 7|4 6 2
+4 2 7|3 8 6|9 5 1
+6 5 9|1 2 4|3 8 7
+-----------------
+3 6 4|2 1 5|8 7 9
+2 7 5|8 6 9|1 3 4
+9 8 1|4 7 3|6 2 5
+
+ÉXITO
+
+------------------------------------------
+ENTRANDO EN ZONA: 69
+------------------------------------------
+JUGANDO ZONA: 98
+Juego: Mono
+Mono horizontal: 1; Mono vertical: 0; Caja: 3; Plátano: 2
+
 Búsqueda: Profundidad limitada
+Resultado: Mono
+Mono horizontal: 2; Mono vertical: 1; Caja: 2; Plátano: 2
+
+ÉXITO
+
+------------------------------------------
+ENTRANDO EN ZONA: 98
+------------------------------------------
+JUGANDO ZONA: 99
+Juego: Sudoku
+0 0 2|0 3 1|0 0 8
+0 4 0|0 0 0|0 1 3
+8 1 0|7 0 0|0 0 0
+-----------------
+0 3 0|0 5 0|0 6 2
+4 0 7|3 8 6|9 0 1
+6 5 0|0 2 0|0 8 0
+-----------------
+0 0 0|0 0 5|0 7 9
+2 7 0|0 0 0|0 3 0
+9 0 0|4 7 0|6 0 0
+
+Búsqueda: AEstrella
+Resultado: Sudoku
+5 9 2|6 3 1|7 4 8
+7 4 6|5 9 8|2 1 3
+8 1 3|7 4 2|5 9 6
+-----------------
+1 3 8|9 5 7|4 6 2
+4 2 7|3 8 6|9 5 1
+6 5 9|1 2 4|3 8 7
+-----------------
+3 6 4|2 1 5|8 7 9
+2 7 5|8 6 9|1 3 4
+9 8 1|4 7 3|6 2 5
+
+ÉXITO
+
+------------------------------------------
+ENTRANDO EN ZONA: 99
+------------------------------------------
+JUGANDO ZONA: 104
+Juego: Colores
+[ 1  1  1 ]
+[ 2  1  1 ]
+[ 2  2  2 ]
+
+Búsqueda: Escalada simple
+Resultado: Colores
+[ 1  2  1 ]
+[ 2  1  2 ]
+[ 1  2  1 ]
+
+ÉXITO
+
+------------------------------------------
+ENTRANDO EN ZONA: 104
+------------------------------------------
+JUGANDO ZONA: 105
+Juego: Hanoi
+Varilla A=[4321] ; Varilla B=[] ; Varilla C=[]
+
+Búsqueda: Voraz
+Resultado: Hanoi
+Varilla A=[] ; Varilla B=[] ; Varilla C=[4321]
+
+ÉXITO
+
+------------------------------------------
+ENTRANDO EN ZONA: 105
+------------------------------------------
+JUGANDO ZONA: 66
+Juego: Puzzle 8
+[2 8 3][1 6 4][7 0 5]
+
+Búsqueda: Profundidad iterativa
+Resultado: Puzzle 8
+[1 2 3][8 0 4][7 6 5]
+
+ÉXITO
+
+------------------------------------------
+ENTRANDO EN ZONA: 66
+------------------------------------------
+JUGANDO ZONA: 92
+Juego: Relojes
+Reloj 11 restante: 0 Reloj 7 restante: 0
+
+Búsqueda: Primero en anchura
+Resultado: Relojes
+Reloj 11 restante: 11 Reloj 7 restante: 3
+
+ÉXITO
+
+------------------------------------------
+ENTRANDO EN ZONA: 92
+------------------------------------------
+JUGANDO ZONA: 94
+Juego: 8 Reinas
+[ -1 -1 -1 -1 -1 -1 -1 -1 ]
+
+Búsqueda: Escalada máxima pendiente
+Resultado: 8 Reinas
+[ 0 2 4 1 3 -1 -1 -1 ]
+
+BLOQUEADA ZONA 94
+
+------------------------------------------
+ENTRANDO EN ZONA: 92
+------------------------------------------
+JUGANDO ZONA: 93
+Juego: Misioneros y caníbales
+Misioneros izquierda: 3 Canibales izquierda: 3
+
+Búsqueda: Escalada máxima pendiente
+Resultado: Misioneros y caníbales
+Misioneros izquierda: 3 Canibales izquierda: 3
+
+BLOQUEADA ZONA 93
+
+------------------------------------------
+ENTRANDO EN ZONA: 92
+------------------------------------------
+JUGANDO ZONA: 16
+Juego: Relojes
+Reloj 11 restante: 0 Reloj 7 restante: 0
+
+Búsqueda: Profundidad iterativa
+Resultado: Relojes
+Reloj 11 restante: 11 Reloj 7 restante: 3
+
+ÉXITO
+
+------------------------------------------
+ENTRANDO EN ZONA: 16
+------------------------------------------
+JUGANDO ZONA: 46
+Juego: Colores
+[ 1  1  1 ]
+[ 2  1  1 ]
+[ 2  2  2 ]
+
+Búsqueda: Primero en profundidad
+Resultado: Colores
+[ 2  1  2 ]
+[ 1  2  1 ]
+[ 2  1  2 ]
+
+ÉXITO
+
+------------------------------------------
+ENTRANDO EN ZONA: 46
+------------------------------------------
+JUGANDO ZONA: 79
+Juego: Mono
+Mono horizontal: 1; Mono vertical: 0; Caja: 3; Plátano: 2
+
+Búsqueda: Primero en profundidad
+Resultado: Mono
+Mono horizontal: 2; Mono vertical: 1; Caja: 2; Plátano: 2
+
+ÉXITO
+
+------------------------------------------
+ENTRANDO EN ZONA: 79
+------------------------------------------
+JUGANDO ZONA: 91
+Juego: Mono
+Mono horizontal: 1; Mono vertical: 0; Caja: 3; Plátano: 2
+
+Búsqueda: Voraz
+Resultado: Mono
+Mono horizontal: 2; Mono vertical: 1; Caja: 2; Plátano: 2
+
+ÉXITO
+
+------------------------------------------
+ENTRANDO EN ZONA: 91
+------------------------------------------
+JUGANDO ZONA: 103
+Juego: Misioneros y caníbales
+Misioneros izquierda: 3 Canibales izquierda: 3
+
+Búsqueda: Primero en profundidad
+Resultado: Misioneros y caníbales
+Misioneros izquierda: 0 Canibales izquierda: 0
+
+ÉXITO
+
+------------------------------------------
+ENTRANDO EN ZONA: 103
+------------------------------------------
+JUGANDO ZONA: 68
+Juego: Garrafas
+G=0L P=0L
+
+Búsqueda: Profundidad iterativa
 Resultado: Garrafas
 G=2L P=0L
 
 ÉXITO
 
 ------------------------------------------
-ENTRANDO EN ZONA: 97
+ENTRANDO EN ZONA: 68
+------------------------------------------
+JUGANDO ZONA: 90
+Juego: Relojes
+Reloj 11 restante: 0 Reloj 7 restante: 0
+
+Búsqueda: Escalada simple
+Resultado: Relojes
+Reloj 11 restante: 0 Reloj 7 restante: 0
+
+BLOQUEADA ZONA 90
+
+------------------------------------------
+ENTRANDO EN ZONA: 68
+------------------------------------------
+JUGANDO ZONA: 78
+Juego: 8 Reinas
+[ -1 -1 -1 -1 -1 -1 -1 -1 ]
+
+Búsqueda: Coste uniforme
+Resultado: 8 Reinas
+[ 3 1 6 4 0 7 5 2 ]
+
+ÉXITO
+
+------------------------------------------
+ENTRANDO EN ZONA: 78
+------------------------------------------
+JUGANDO ZONA: 88
+Juego: Garrafas
+G=0L P=0L
+
+Búsqueda: Voraz
+Resultado: Garrafas
+G=2L P=0L
+
+ÉXITO
+
+------------------------------------------
+ENTRANDO EN ZONA: 88
+------------------------------------------
+JUGANDO ZONA: 112
+Juego: Lobo, cabra, col
+Granjero=1 ; Lobo=1 ; Cabra=1 ; Col=1
+
+Búsqueda: Profundidad limitada
+Resultado: Lobo, cabra, col
+Granjero=0 ; Lobo=0 ; Cabra=0 ; Col=0
+
+ÉXITO
+
+------------------------------------------
+ENTRANDO EN ZONA: 112
+------------------------------------------
+JUGANDO ZONA: 119
+Juego: Hanoi
+Varilla A=[4321] ; Varilla B=[] ; Varilla C=[]
+
+Búsqueda: AEstrella
+Resultado: Hanoi
+Varilla A=[] ; Varilla B=[] ; Varilla C=[4321]
+
+ÉXITO
+
+------------------------------------------
+ENTRANDO EN ZONA: 119
 ------------------------------------------
 Hay salida: true
