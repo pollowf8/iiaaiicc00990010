@@ -20,7 +20,7 @@ public class JuegoQuince extends Juego{
 	 */
 	public JuegoQuince(){
 		tablero=new int[]{10,10,4,7,6,7,1,10,4,7,6,10,4,6,10,1};
-		valorHeur=-1;
+		valorHeur=this.Heuristica();
 		coste=0;
 		profundidad=0;
 		camino="";
@@ -84,6 +84,7 @@ public class JuegoQuince extends Juego{
 	private void Quita2(int i,int j){
 		tablero[i]=0;
 		tablero[j]=0;
+		valorHeur=this.Heuristica();
 	}
 	
 	/**
@@ -96,6 +97,15 @@ public class JuegoQuince extends Juego{
 		tablero[i]=0;
 		tablero[j]=0;
 		tablero[k]=0;
+		valorHeur=this.Heuristica();
+	}
+	
+	private double Heuristica(){
+		double d=0;
+		for (int i=0;i<tablero.length;i++)
+			if (tablero[i]!=0)
+				d+=1;
+		return d;
 	}
 	
 	public Vector<Juego> expandir(){
