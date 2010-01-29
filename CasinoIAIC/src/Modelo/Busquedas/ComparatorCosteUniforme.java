@@ -3,6 +3,11 @@ package Modelo.Busquedas;
 import java.util.Comparator;
 import Modelo.Juegos.Juego;
 
+/**
+ * 
+ * @author Pablo Acevedo, Alfredo Díez, Jorge Guirado
+ *
+ */
 public class ComparatorCosteUniforme implements Comparator<Juego>{
 
 	@Override

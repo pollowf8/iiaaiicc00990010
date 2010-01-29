@@ -9,7 +9,8 @@ import Modelo.Busquedas.*;
 import Modelo.Juegos.*;
 
 /**
- * @author jga
+ * 
+ * @author Pablo Acevedo, Alfredo Díez, Jorge Guirado
  *
  */
 public class Casino{

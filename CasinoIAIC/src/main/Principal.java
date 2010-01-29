@@ -3,6 +3,11 @@ package main;
 import Swing.Swing;
 import Controlador.Controlador;
 
+/**
+ * 
+ * @author Pablo Acevedo, Alfredo Díez, Jorge Guirado
+ *
+ */
 public class Principal {
 	
 		public static void main(String[] args) 

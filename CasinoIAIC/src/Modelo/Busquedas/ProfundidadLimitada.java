@@ -10,8 +10,7 @@ import Modelo.Juegos.*;
  * Búsqueda en profundidad limitada. Es una búsqueda primero en profundidad, pero limita el número de niveles que se pueden expandir. Incluye
  * control de ciclos, y también manejadores de excepciones (por si se vacía la pila y no se ha encontrado aún la solución) y un manejador de 
  * error (por si la memoria se llena antes de llegar al objetivo).
- * @author Pablo Acevedo
- *
+ * @author Pablo Acevedo, Alfredo Díez, Jorge Guirado
  */
 public class ProfundidadLimitada implements Busqueda{
 	

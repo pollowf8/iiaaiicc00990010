@@ -9,7 +9,11 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-
+/**
+ * 
+ * @author Pablo Acevedo, Alfredo Díez, Jorge Guirado
+ *
+ */
 public class FicheroTxt {
 
 	private String texto;

@@ -4,8 +4,7 @@ import Modelo.Juegos.Juego;
 
 /**
  * Interfaz que da un método de resolución general para cualquier búsqueda. Cada tipo de búsqueda implementará el método según su estrategia.
- * @author Pablo Acevedo
- *
+ * @author Pablo Acevedo, Alfredo Díez, Jorge Guirado
  */
 public interface Busqueda{
 	/**

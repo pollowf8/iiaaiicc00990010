@@ -6,6 +6,11 @@ import java.util.Vector;
 
 import Modelo.Juegos.*;
 
+/**
+ * 
+ * @author Pablo Acevedo, Alfredo Díez, Jorge Guirado
+ *
+ */
 public class AEstrella implements Busqueda{
 
 	public String toString() {

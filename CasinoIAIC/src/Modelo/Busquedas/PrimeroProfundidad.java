@@ -10,8 +10,7 @@ import Modelo.Juegos.*;
  * Búsqueda primero en profundidad. Desde el estado inicial, se van expandiendo sucesores, y se recorren con una pila, de forma que se explora el primer nodo
  * recién expandido antes de seguir con los demás. Al utilizar una pila se hace backtracking si se llega a una rama cerrada que no tiene solución. Incluye
  * control de ciclos, y manejador de error, por si la memoria se llena antes de llegar al objetivo.
- * @author Pablo Acevedo
- *
+ * @author Pablo Acevedo, Alfredo Díez, Jorge Guirado
  */
 public class PrimeroProfundidad implements Busqueda{
 
