@@ -9,8 +9,7 @@ import Modelo.Juegos.*;
 /**
  * Búsqueda en profundidad iterativa. Sigue el mismo principio que la búsqueda en profundidad limitada, empieza con una profundidad 0, y va incrementandola
  * haciendo tantas iteraciones como necesite para encontrar la solución. Incluye control de ciclos, errores y excepciones.
- * @author Pablo Acevedo
- *
+ * @author Pablo Acevedo, Alfredo Díez, Jorge Guirado
  */
 public class ProfundidadIterativa implements Busqueda{
 

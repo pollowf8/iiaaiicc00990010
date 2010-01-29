@@ -14,7 +14,11 @@ import Controlador.Controlador;
 import Modelo.ObservadorPartida;
 
 
-
+/**
+ * 
+ * @author Pablo Acevedo, Alfredo Díez, Jorge Guirado
+ *
+ */
 @SuppressWarnings("serial")
 public class Panel extends JPanel implements ObservadorPartida{
 

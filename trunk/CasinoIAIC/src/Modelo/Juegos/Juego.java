@@ -5,8 +5,7 @@ import java.util.Vector;
 /**
  * Clase abstracta Juego. Proporciona la estructura común de todos los juegos, que después implementarán los métodos abstractos según
  * los estados y operadores de cada uno. Cada instancia de ésta clase, o de las que heredan de ella, representa un único estado de juego.
- * @author Pablo Acevedo
- *
+ * @author Pablo Acevedo, Alfredo Díez, Jorge Guirado
  */
 public abstract class Juego{
 	/**

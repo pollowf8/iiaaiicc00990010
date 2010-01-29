@@ -6,6 +6,11 @@ import java.util.Queue;
 import java.util.Vector;
 import Modelo.Juegos.*;
 
+/**
+ * 
+ * @author Pablo Acevedo, Alfredo Díez, Jorge Guirado
+ *
+ */
 public class EscaladaSimple implements Busqueda{
 
 	public String toString() {

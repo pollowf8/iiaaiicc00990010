@@ -4,6 +4,11 @@ import java.util.Random;
 import java.util.Vector;
 import Modelo.Juegos.*;
 
+/**
+ * 
+ * @author Pablo Acevedo, Alfredo Díez, Jorge Guirado
+ *
+ */
 public class EnfriamientoSimulado implements Busqueda{
 
 	public String toString() {

@@ -3,6 +3,11 @@ package Modelo.Busquedas;
 import java.util.Comparator;
 import Modelo.Juegos.*;
 
+/**
+ * 
+ * @author Pablo Acevedo, Alfredo Díez, Jorge Guirado
+ *
+ */
 public class ComparatorAEstrella implements Comparator<Juego>{
 
 	@Override

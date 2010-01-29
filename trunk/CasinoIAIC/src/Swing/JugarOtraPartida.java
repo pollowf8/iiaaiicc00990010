@@ -5,6 +5,9 @@ import javax.swing.JOptionPane;
 
 
 @SuppressWarnings("serial")
+/**
+ * @author Pablo Acevedo, Alfredo Díez, Jorge Guirado
+ */
 public class JugarOtraPartida extends JFrame{
 
 	private boolean eleccion;

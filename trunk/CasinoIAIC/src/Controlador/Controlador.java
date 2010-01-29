@@ -2,9 +2,12 @@ package Controlador;
 
 import Modelo.Casino;
 import Swing.Panel;
-import Swing.Swing;
 
-
+/**
+ * 
+ * @author Pablo Acevedo, Alfredo Díez, Jorge Guirado
+ *
+ */
 public class Controlador {
 
 	private static Controlador instance = null;

@@ -5,6 +5,11 @@ import java.util.PriorityQueue;
 import java.util.Vector;
 import Modelo.Juegos.*;
 
+/**
+ * 
+ * @author Pablo Acevedo, Alfredo Díez, Jorge Guirado
+ *
+ */
 public class Voraz implements Busqueda{
 
 	public String toString() {

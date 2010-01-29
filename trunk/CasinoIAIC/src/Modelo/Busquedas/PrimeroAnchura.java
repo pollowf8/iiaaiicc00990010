@@ -9,8 +9,7 @@ import Modelo.Juegos.*;
 /**
  * Búsqueda primero en anchura. Desde un estado inicial va expandiendo nodos y recorriendolos con una cola, de forma
  * que se busca la solucion por niveles. Incluye control de ciclos.
- * @author Pablo Acevedo
- * 
+ * @author Pablo Acevedo, Alfredo Díez, Jorge Guirado
  */
 public class PrimeroAnchura implements Busqueda{
 

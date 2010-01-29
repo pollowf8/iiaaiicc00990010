@@ -6,7 +6,11 @@ import javax.swing.JFrame;
 import Controlador.Controlador;
 
 
-
+/**
+ * 
+ * @author Pablo Acevedo, Alfredo Díez, Jorge Guirado
+ *
+ */
 @SuppressWarnings("serial")
 public class Swing extends JFrame{
 	

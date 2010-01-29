@@ -6,7 +6,8 @@ package Modelo;
 import java.util.ArrayList;
 
 /**
- * @author jga
+ * 
+ * @author Pablo Acevedo, Alfredo Díez, Jorge Guirado
  *
  */
 public class Zona {
