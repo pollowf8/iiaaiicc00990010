@@ -1,4 +1,4 @@
-(deftemplate vaio-data "VAIO laptop info"
+(deftemplate vaio-laptop "VAIO laptop info"
 	(slot series) ; the series of the laptop
 	(slot model (type STRING)) 				; the model of the laptop
 	(slot so (type STRING) (default w7home64)) 	; operating system
