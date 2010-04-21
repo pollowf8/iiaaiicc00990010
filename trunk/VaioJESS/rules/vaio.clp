@@ -27,4 +27,5 @@
 	(slot batrech (type INTEGER)) 			; time to recharge the battery
 	(slot dataurl (type STRING)) 				
 	(slot buyurl (type STRING))
+	(slot price (type INTEGER))				; laptops price in euros
 )
