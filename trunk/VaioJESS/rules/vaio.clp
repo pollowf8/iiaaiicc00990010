@@ -1,5 +1,5 @@
 (deftemplate vaio-laptop "VAIO laptop info"
-	(slot series) ; the series of the laptop
+	(slot series) 						; the series of the laptop
 	(slot model (type STRING)) 				; the model of the laptop
 	(slot so (type STRING) (default w7home64)) 	; operating system
 	(multislot use) 						; a mixture of the following: mini, office, multimedia, gamer, design
@@ -29,3 +29,12 @@
 	(slot buyurl (type STRING))
 	(slot price (type INTEGER))				; laptops price in euros
 )
+
+(deffacts vaio-data "VAIO laptop database"
+	(vaio-laptop(series w)(model VPCW21M2E)(so w7starter32)(use mini)(weight 1.2)(cpuname atomn450)
+	(cpusp 1.66)(ramsize 1)(ramsp 667)(ramtype 2)(hdsize 250)(optical no)(screensize 10.1)
+	(graphicsname gma3150)(dedicated 0)(shared 250)(wifi b g n)(eth 100)(nusb 2) 
+	(hdmi 0)(battime 450)(batrech 200)(dataurl http://www.sony.es/product/vn-w-series/vpcw21m2e-wi) 
+	(buyurl https://www.sonystyle-europe.com/SonyStyle/Portatiles-VAIO/Serie-W-10-1/) 
+	(price 300))
+) 
