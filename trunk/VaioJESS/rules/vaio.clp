@@ -23,18 +23,29 @@
 	(slot nusb (type INTEGER) (default 3))
 	(slot hdmi (default 1))
 	(slot optical (default 0))
+	(slot bluet (default 1))
 	(slot battime (type INTEGER)) 			; duration of the battery in minutes
 	(slot batrech (type INTEGER)) 			; time to recharge the battery
-	(slot dataurl (type STRING)) 				
-	(slot buyurl (type STRING))
+	(slot dataurl (type STRING) (default http://www.sony.es/hub/vaio)) 				
+	(slot buyurl (type STRING) (default http://www.sonystyle.es))
 	(slot price (type INTEGER))				; laptops price in euros
 )
 
 (deffacts vaio-data "VAIO laptop database"
-	(vaio-laptop(series w)(model VPCW21M2E)(so w7starter32)(use mini)(weight 1.2)(cpuname atomn450)
-	(cpusp 1.66)(ramsize 1)(ramsp 667)(ramtype 2)(hdsize 250)(optical no)(screensize 10.1)
+	(vaio-laptop(series w)(model VPCW12S1E)(so w7starter32)(use mini)(weight 1.2)(cpuname atomn280)
+	(cpusp 1.66)(ramsize 1)(ramsp 533)(ramtype 2)(hdsize 250)(optical no)(screensize 10.1)
+	(graphicsname gma950)(dedicated 0)(shared 250)(wifi b g n)(eth 100)(nusb 2) 
+	(hdmi 0)(battime 450)(batrech 200)(price 450))
+
+	(vaio-laptop(series w)(model VPCW12J1E)(so w7starter32)(use mini)(weight 1.2)(cpuname atomn280)
+	(cpusp 1.66)(ramsize 1)(ramsp 533)(ramtype 2)(hdsize 250)(optical no)(screensize 10.1)
 	(graphicsname gma3150)(dedicated 0)(shared 250)(wifi b g n)(eth 100)(nusb 2) 
-	(hdmi 0)(battime 450)(batrech 200)(dataurl http://www.sony.es/product/vn-w-series/vpcw21m2e-wi) 
-	(buyurl https://www.sonystyle-europe.com/SonyStyle/Portatiles-VAIO/Serie-W-10-1/) 
-	(price 300))
+	(hdmi 0)(battime 180)(batrech 200)(price 400))
+	
+	(vaio-laptop(series w)(model VPCW21X5E)(so w7starter32)(use mini)(weight 1.2)(cpuname atomn450)
+	(cpusp 1.66)(ramsize 1)(ramsp 667)(ramtype 2)(hdsize 160)(optical no)(screensize 10.1)
+	(graphicsname gma950)(dedicated 0)(shared 250)(wifi b g n)(eth 100)(nusb 2) 
+	(hdmi 0)(battime 450)(batrech 210)(price 374))
+
+
 ) 
