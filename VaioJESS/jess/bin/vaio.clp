@@ -96,6 +96,15 @@
 	(nusb 2)(hdmi 0)(wan 1)(battime 240)(price 1469))
 ) 
 
+; ********
+; DEFFUNCTIONS
+; ********
+
+;(deffunction ask-start-again ()
+;  (printout t "¿Desea otra consulta? (y/n) ")
+;  (if (eq (read) y) then
+;    (assert (phase choose-query))))
+
 ; *****
 ; RULES 
 ; *****
@@ -121,8 +130,33 @@
 
 (defrule good-query-choice
    ?phase <- (phase choose-query)
-   ?choice <- (query-select ?query&:(or (eq ?query 1) (eq ?query 2) (eq ?query 3) (eq ?query 4)))
+   ?choice <- (query-select ?query&:(or (eq ?query 1)(eq ?query 2)(eq ?query 3)(eq ?query 4)))
    =>
-   (retract ?phase ?choice)
+   (retract ?phase)
    (assert (phase exec-query)))
+
+(defrule exec-query-1
+   ?phase <- (phase exec-query)
+   ?query <- (query-select 1)
+   =>
+   )
+
+(defrule exec-query-2
+	?phase <- (phase exec-query)
+	?query <- (query-select 2)
+	=>
+	)
+
+(defrule exec-query-3
+	?phase <- (phase exec-query)
+	?query <- (query-select 3)
+	=>
+	)
+
+(defrule exec-query-4
+	?phase <- (phase exec-query)
+	?query <- (query-select 4)
+	=>
+	)
+
 
