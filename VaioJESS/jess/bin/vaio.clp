@@ -116,8 +116,8 @@
    ?choice <- (query-select ?query&~1&~2&~3&~4)
    =>
    (retract ?phase ?choice)
-   (assert (phase choose-query))
-   (printout t "Elija un numero del 1 al 4." crlf)))
+   (printout t "Elija un numero del 1 al 4." crlf)
+   (assert (phase choose-query)))
 
 (defrule good-query-choice
    ?phase <- (phase choose-query)
