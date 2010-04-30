@@ -113,10 +113,10 @@
    (phase choose-query)
    =>
    (printout t "Seleccione la consulta a realizar:" crlf
-               "1. Por precio." crlf
+           "1. Por precio." crlf
 		   "2. Por memoria RAM." crlf
 		   "3. Uso para juegos." crlf
-		   "4. Tres caracteristicas simultaneas." crlf
+		   "4. Combinada: peso, pantalla, precio." crlf
 		   "Introduzca el numero de la consulta: ")
    (assert (query-select (read))))
 
@@ -136,27 +136,66 @@
    (assert (phase exec-query)))
 
 (defrule exec-query-1
-   ?phase <- (phase exec-query)
-   ?query <- (query-select 1)
-   =>
-   )
+    ?phase <- (phase exec-query)
+    ?query <- (query-select 1)
+    =>
+	(printout t "Introduzca el precio maximo deseado: ")
+    (retract ?phase ?query)
+	(assert (price (read)))
+	(assert (phase exec-price)))
+	
+(defrule exec-price
+	(price ?pri)
+	(phase exec-price)
+	?p <- (vaio-laptop {price <= ?pri})
+	=>
+	(printout t "Modelo: " ?p.model crlf))
 
 (defrule exec-query-2
 	?phase <- (phase exec-query)
 	?query <- (query-select 2)
 	=>
-	)
+	(printout t "Introduzca la cantidad de memoria RAM deseada: ")
+	(retract ?phase ?query)
+	(assert (ram (read)))
+	(assert (phase exec-ram)))
+ 
+(defrule exec-ram
+	(ram ?r)
+	(phase exec-ram)
+	?p <- (vaio-laptop {ramsize >= ?r})
+	=>
+	(printout t "Modelo: " ?p.model crlf))
 
 (defrule exec-query-3
 	?phase <- (phase exec-query)
 	?query <- (query-select 3)
+	?p <- (vaio-laptop (use $? gamer $?))
 	=>
-	)
+	(printout t "Modelo: "?p.model crlf))
 
 (defrule exec-query-4
 	?phase <- (phase exec-query)
 	?query <- (query-select 4)
 	=>
+	(printout t "Introduzca el peso maximo: ")
+	(assert (weight (read)))
+	(printout t "Introduzca las pulgadas maximas de la pantalla: ")
+	(assert (screen (read)))
+	(printout t "Introduzca el precio maximo en euros: ")
+	(assert (price (read)))
+	(assert (phase exec-tri))
 	)
+	
+(defrule exec-tri
+	(weight ?w)
+	(screen ?s)
+	(price ?pri)
+	(phase exec-tri)
+	?p <- (vaio-laptop {screensize <= ?s && price <= ?pri && weight <= ?w})
+	=>
+	(printout t "Modelo: " ?p.model crlf))
 
+(reset)
+(run)
 
