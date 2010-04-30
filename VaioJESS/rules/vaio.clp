@@ -31,6 +31,13 @@
 	(slot price (type INTEGER))				; laptops price in euros
 )
 
+; ********
+; DEFFACTS 
+; ********
+
+(deffacts initial-phase
+   (phase choose-query))
+
 (deffacts vaio-data "VAIO laptop database"
 
 	(vaio-laptop(series e)(model VPCEC1X5E)(use multimedia gamer)(weight 3.3)
@@ -88,3 +95,18 @@
 	(hdtype ssd)(media no)(screensize 11.1)(graphicsname gma500)(dedicated 0)(shared 760)
 	(nusb 2)(hdmi 0)(wan 1)(battime 240)(price 1469))
 ) 
+
+; *****
+; RULES 
+; *****
+
+(defrule query-select
+   (phase choose-query)
+   =>
+   (printout t "Seleccione la consulta a realizar:" crlf
+               "1. Por precio." crlf
+		   "2. Por memoria RAM." crlf
+		   "3. Uso para juegos." crlf
+		   "4. Tres características simultáneas." crlf
+		   "Introduzca el número de la consulta: " crlf)
+   (assert (query-select (read))))
