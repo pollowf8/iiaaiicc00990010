@@ -1,0 +1,23 @@
+********************************************************************************
+Probamos la consulta 4: Combinada de peso, pantalla y precio
+Introducimos 2 Kg como tope de peso.
+Introducimos 14'' como tope de pantalla.
+Introducimos 800 euros como tope en precio.
+********************************************************************************
+
+Jess> (batch vaio.clp)
+Seleccione la consulta a realizar:
+1. Por precio.
+2. Por memoria RAM.
+3. Uso para juegos.
+4. Combinada: peso, pantalla, precio.
+5. Salida HDMI, audio optico y Blu-Ray.
+6. Todas las caracteristicas.
+Introduzca el numero de la consulta: 4
+Introduzca el peso maximo: 2
+Introduzca las pulgadas maximas de la pantalla: 14
+Introduzca el precio maximo en euros: 800
+------------------------------------------------
+Modelo: VAIO serie w VPCW21X5E
+URL: http://www.sonystyle.es
+------------------------------------------------
