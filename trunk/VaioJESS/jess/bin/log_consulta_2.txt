@@ -1,0 +1,40 @@
+********************************************************************************
+Probamos la consulta 2: Mostrar los modelos con memoria RAM menor o igual que 
+lo especificado.
+Introducimos 3 Gb como tope.
+********************************************************************************
+
+Jess> (batch vaio.clp)
+Seleccione la consulta a realizar:
+1. Por precio.
+2. Por memoria RAM.
+3. Uso para juegos.
+4. Combinada: peso, pantalla, precio.
+5. Salida HDMI, audio optico y Blu-Ray.
+6. Todas las caracteristicas.
+Introduzca el numero de la consulta: 2
+Introduzca la cantidad de memoria RAM deseada: 3
+------------------------------------------------
+Modelo: VAIO serie z VPCZ11X5E
+URL: http://www.sonystyle.es
+------------------------------------------------
+------------------------------------------------
+Modelo: VAIO serie z VPCZ11V5E
+URL: http://www.sonystyle.es
+------------------------------------------------
+------------------------------------------------
+Modelo: VAIO serie y VPCY11V9E
+URL: http://www.sonystyle.es
+------------------------------------------------
+------------------------------------------------
+Modelo: VAIO serie f VPCF11X5E
+URL: http://www.sonystyle.es
+------------------------------------------------
+------------------------------------------------
+Modelo: VAIO serie e VPCEA1X5E
+URL: http://www.sonystyle.es
+------------------------------------------------
+------------------------------------------------
+Modelo: VAIO serie e VPCEB1X5E
+URL: http://www.sonystyle.es
+------------------------------------------------

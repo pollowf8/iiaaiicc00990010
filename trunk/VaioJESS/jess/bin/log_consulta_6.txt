@@ -1,0 +1,55 @@
+********************************************************************************
+Probamos la consulta 6: Todas las características
+Introducimos peso medio (2 < peso < 2.4)
+Introducimos procesador Core i3
+Introducimos memoria 2-3 GB.
+Introducimos unidad Combo DVD
+Introducimos memoria gráfica dedicada 512 MB
+Introducimos precio barato (precio < 700 euros)
+********************************************************************************
+
+Jess> (batch vaio.clp)
+Seleccione la consulta a realizar:
+1. Por precio.
+2. Por memoria RAM.
+3. Uso para juegos.
+4. Combinada: peso, pantalla, precio.
+5. Salida HDMI, audio optico y Blu-Ray.
+6. Todas las caracteristicas.
+Introduzca el numero de la consulta: 6
+RANGO DE PESO:
+1. Mini:  <2 kg
+2. Medio: <2.4 kg
+3. No importa el peso
+Introduzca el rango: 2
+SELECCIONE PROCESADOR:
+1. Core i3
+2. Core i5
+3. Core i7
+4. Core 2 Duo
+5. Atom
+Introduzca el rango: 1
+SELECCIONE MEMORIA RAM:
+1. 1 Gb DDR2
+2. 2-3 Gb DDR3
+3. +4 Gb DDR3
+Introduzca el rango: 2
+SELECCIONE TIPO DE MEDIO:
+1. Blu-Ray
+2. Combo DVD
+3. Ninguno
+Introduzca el rango: 2
+SELECCIONE MEMORIA GRAFICA:
+1. Dedicada 512 Mb
+2. Dedicada 1024 Mb
+3. Compartida
+Introduzca el rango: 1
+SELECCIONE RANGO DE PRECIO:
+1. Barato: <700 euros
+2. Medio:  <1200 euros
+3. No importa el precio
+Introduzca el rango: 1
+------------------------------------------------
+Modelo: VAIO serie e VPCEA1X5E
+URL: http://www.sonystyle.es
+------------------------------------------------

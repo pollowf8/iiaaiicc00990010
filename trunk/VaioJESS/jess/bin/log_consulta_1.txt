@@ -1,0 +1,47 @@
+********************************************************************************
+Probamos la consulta 1: Mostrar los modelos con precio inferior al especificado.
+Introducimos 1250 euros como precio tope
+********************************************************************************
+
+Jess> (batch vaio.clp)
+Seleccione la consulta a realizar:
+1. Por precio.
+2. Por memoria RAM.
+3. Uso para juegos.
+4. Combinada: peso, pantalla, precio.
+5. Salida HDMI, audio optico y Blu-Ray.
+6. Todas las caracteristicas.
+Introduzca el numero de la consulta: 1
+Introduzca el precio maximo deseado: 1250
+------------------------------------------------
+Modelo: VAIO serie w VPCW21X5E
+URL: http://www.sonystyle.es
+------------------------------------------------
+------------------------------------------------
+Modelo: VAIO serie s VPCS11V5E
+URL: http://www.sonystyle.es
+------------------------------------------------
+------------------------------------------------
+Modelo: VAIO serie y VPCY11V9E
+URL: http://www.sonystyle.es
+------------------------------------------------
+------------------------------------------------
+Modelo: VAIO serie f VPCF11V5E
+URL: http://www.sonystyle.es
+------------------------------------------------
+------------------------------------------------
+Modelo: VAIO serie f VPCF11X5E
+URL: http://www.sonystyle.es
+------------------------------------------------
+------------------------------------------------
+Modelo: VAIO serie e VPCEA1X5E
+URL: http://www.sonystyle.es
+------------------------------------------------
+------------------------------------------------
+Modelo: VAIO serie e VPCEB1X5E
+URL: http://www.sonystyle.es
+------------------------------------------------
+------------------------------------------------
+Modelo: VAIO serie e VPCEC1X5E
+URL: http://www.sonystyle.es
+------------------------------------------------
